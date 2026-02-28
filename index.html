@@ -40,6 +40,16 @@
       .pick{padding:16px;}
       .pick-header{flex-direction:column;gap:8px;}
     }
+  
+    .picks-section{margin-bottom:48px;}
+    .picks-label{font-size:12px;letter-spacing:0.3em;padding:10px 16px;background:var(--red);color:#fff;margin-bottom:0;display:flex;align-items:center;gap:12px;}
+    .picks-label::after{display:none;}
+    .picks{border:1px solid var(--border);border-top:none;gap:0;}
+    .pick{border-radius:0;border-left:none;border-right:none;border-top:none;border-bottom:1px solid var(--border);padding:28px 24px;}
+    .pick:last-child{border-bottom:none;}
+    .pick:hover{transform:none;background:var(--surface2);}
+    .pick-number{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--border);line-height:1;margin-bottom:-8px;}
+
   </style>
 </head>
 <body>
