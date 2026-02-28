@@ -1,63 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NBA Bets Daily</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap');
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:#08080f;color:#f8f9fa;font-family:'Barlow',sans-serif;padding-bottom:80px;}
-
     header{background:linear-gradient(135deg,#0f0f1f 0%,#1a0030 100%);border-bottom:4px solid #e63946;padding:28px 40px;}
     .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.3em;color:#ffd60a;margin-bottom:8px;}
     h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,8vw,88px);font-weight:900;text-transform:uppercase;line-height:0.9;}
     h1 .nba{color:#e63946;} h1 .bets{color:#ffd60a;}
     .header-meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap;}
     .badge{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 12px;}
-    .badge-red{background:#e63946;color:#fff;}
-    .badge-gold{background:#ffd60a;color:#000;}
-    .badge-outline{border:1px solid #555;color:#aaa;}
-
-    /* PICK TYPE ZONES — each bet type has its own character */
+    .badge-red{background:#e63946;color:#fff;} .badge-gold{background:#ffd60a;color:#000;} .badge-outline{border:1px solid #555;color:#aaa;}
     .zone-prop{background:#0f0a1a;border-top:3px solid #a78bfa;padding:32px 40px;}
     .zone-spread{background:#0a1200;border-top:3px solid #4ade80;padding:32px 40px;}
     .zone-total{background:#001020;border-top:3px solid #38bdf8;padding:32px 40px;}
-    .zone-moneyline{background:#1a0a00;border-top:3px solid #fb923c;padding:32px 40px;}
-
     .zone-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
     .zone-icon{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;opacity:0.15;}
     .zone-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.25em;}
-    .zone-prop .zone-title{color:#a78bfa;}
-    .zone-spread .zone-title{color:#4ade80;}
-    .zone-total .zone-title{color:#38bdf8;}
-    .zone-moneyline .zone-title{color:#fb923c;}
+    .zone-prop .zone-title{color:#a78bfa;} .zone-spread .zone-title{color:#4ade80;} .zone-total .zone-title{color:#38bdf8;}
     .zone-line{flex:1;height:1px;opacity:0.2;}
-    .zone-prop .zone-line{background:#a78bfa;}
-    .zone-spread .zone-line{background:#4ade80;}
-    .zone-total .zone-line{background:#38bdf8;}
-    .zone-moneyline .zone-line{background:#fb923c;}
-
-    .pick{padding:24px;border:1px solid;margin-bottom:12px;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;transition:transform 0.15s;}
+    .zone-prop .zone-line{background:#a78bfa;} .zone-spread .zone-line{background:#4ade80;} .zone-total .zone-line{background:#38bdf8;}
+    .pick{padding:24px;border:1px solid;margin-bottom:12px;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:filter 0.15s;}
+    .pick:hover{filter:brightness(1.1);}
     .pick::before{content:attr(data-n);position:absolute;right:16px;top:8px;font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:900;opacity:0.06;line-height:1;}
-    .pick:hover{transform:translateX(6px);}
-    .zone-prop .pick{background:#130e24;border-color:#2d1f5e;}
-    .zone-spread .pick{background:#0a1a0a;border-color:#1a3d1a;}
-    .zone-total .pick{background:#001428;border-color:#003060;}
-    .zone-moneyline .pick{background:#1a1000;border-color:#3d2400;}
-
-    .pick-line{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,4vw,32px);font-weight:700;text-transform:uppercase;line-height:1.1;margin-bottom:10px;}
-    .zone-prop .pick-line span{color:#a78bfa;}
-    .zone-spread .pick-line span{color:#4ade80;}
-    .zone-total .pick-line span{color:#38bdf8;}
-    .zone-moneyline .pick-line span{color:#fb923c;}
-
+    .zone-prop .pick{background:#130e24;border-color:#2d1f5e;} .zone-spread .pick{background:#0a1a0a;border-color:#1a3d1a;} .zone-total .pick{background:#001428;border-color:#003060;}
+    .pick-line{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,4vw,30px);font-weight:700;text-transform:uppercase;line-height:1.1;margin-bottom:10px;}
+    .zone-prop .pick-line span{color:#a78bfa;} .zone-spread .pick-line span{color:#4ade80;} .zone-total .pick-line span{color:#38bdf8;}
     .pick-conf{font-family:'Barlow Condensed',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:12px;color:#888;}
     .pick p{font-size:14px;line-height:1.75;color:#bbb;}
     .pick-foot{margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:#555;display:flex;justify-content:space-between;}
-
     footer{text-align:center;padding:24px;font-size:12px;color:#444;border-top:1px solid #1a1a2e;}
-    @media(max-width:768px){header,.zone-prop,.zone-spread,.zone-total,.zone-moneyline{padding:16px;}.pick::before{display:none;}.pick-line{font-size:22px;}}
+    @media(max-width:768px){header,.zone-prop,.zone-spread,.zone-total{padding:16px;}.pick::before{display:none;}.pick-line{font-size:22px;}}
   </style>
 </head>
 <body>
@@ -65,27 +41,48 @@
     <div class="eyebrow">Wally's Daily Picks</div>
     <h1><span class="nba">NBA</span> <span class="bets">Bets</span></h1>
     <div class="header-meta">
-      <div class="badge badge-red">Today's Card</div>
-      <div class="badge badge-gold" id="ct">—</div>
+      <div class="badge badge-red">5 Games Today</div>
+      <div class="badge badge-gold">Saturday, Feb 28</div>
       <div class="badge badge-outline">Bet365 Lines</div>
     </div>
   </header>
 
   <div class="zone-prop">
     <div class="zone-header"><div class="zone-icon">P</div><div class="zone-title">Player Props</div><div class="zone-line"></div></div>
-    <div class="pick" data-n="1"><div class="pick-line">Picks <span>Loading...</span></div><div class="pick-conf">⚡ Generating</div><p>Wally is researching today's games, injury reports, and lines. Check back shortly.</p></div>
+    <a class="pick" href="https://www.dispatch.com/story/sports/nba/2026/02/28/pelicans-at-jazz-odds-picks-and-predictions/88917316007/" target="_blank" data-n="1">
+      <div class="pick-line">Pelicans @ Jazz — Saddiq Bey <span>Over 19.5 PTS</span></div>
+      <div class="pick-conf">🔥 High Confidence · Line: -115</div>
+      <p>Second straight game vs Utah for Bey after a season-high explosion last meeting. Trey Murphy remains sidelined (5th straight game) — in 6 games without Murphy this season, Bey has gone 20+ in 5 of them. His usage jumps from 20.1% to 24.3% without Murphy. Jazz rank last or second-last defending above-the-break threes and paint, which are Bey's primary scoring zones. Pelicans are 6.5-point road favorites (O/U 244.5).</p>
+      <div class="pick-foot"><span>Source: Dispatch / Fox Sports</span><span>Bet365</span></div>
+    </a>
+    <a class="pick" href="https://sports.yahoo.com/articles/pelicans-vs-jazz-prediction-picks-175300789.html" target="_blank" data-n="2">
+      <div class="pick-line">Pelicans @ Jazz — CJ McCollum <span>Over 18.5 PTS</span></div>
+      <div class="pick-conf">⚡ Medium Confidence · Line: -110</div>
+      <p>With Murphy out, McCollum is the clear secondary option alongside Bey. Jazz allow the 4th-most points to opposing guards this month. McCollum averaged 22 PPG in his last 3 games against Utah. Back-to-back situation for Jazz who played last night — fatigue factor in 2nd half could inflate scoring.</p>
+      <div class="pick-foot"><span>Yahoo Sports</span><span>Bet365</span></div>
+    </a>
   </div>
+
   <div class="zone-spread">
     <div class="zone-header"><div class="zone-icon">S</div><div class="zone-title">Spreads</div><div class="zone-line"></div></div>
+    <a class="pick" href="https://sports.betmgm.com/en/blog/nba/pelicans-jazz-prediction-odds-lines-picks-nba-feb-28-jaa/" target="_blank" data-n="3">
+      <div class="pick-line">New Orleans Pelicans <span>-6.5 (-110)</span></div>
+      <div class="pick-conf">🔥 High Confidence · Line: -110</div>
+      <p>Pelicans covered this same number last meeting and won comfortably. Utah on a back-to-back, playing their 2nd game in 2 nights. Jazz are 3-12 ATS on the second night of back-to-backs this season. New Orleans playing with motivation after a tough stretch — this is a bounce-back spot. Models give Pelicans 51% win probability which doesn't fully account for the fatigue edge.</p>
+      <div class="pick-foot"><span>BetMGM / Fox Sports</span><span>Bet365: NO -6.5</span></div>
+    </a>
   </div>
+
   <div class="zone-total">
     <div class="zone-header"><div class="zone-icon">O</div><div class="zone-title">Totals</div><div class="zone-line"></div></div>
-  </div>
-  <div class="zone-moneyline">
-    <div class="zone-header"><div class="zone-icon">M</div><div class="zone-title">Moneylines</div><div class="zone-line"></div></div>
+    <a class="pick" href="https://www.foxsports.com/articles/nba/pelicans-vs-jazz-prediction-odds-picks-feb-28" target="_blank" data-n="4">
+      <div class="pick-line">Pelicans @ Jazz — <span>Over 244.5</span></div>
+      <div class="pick-conf">⚡ Medium Confidence · Line: -110</div>
+      <p>Both teams ranked in the top 10 for pace this season. Utah plays at the fastest pace in the league at home. Last meeting went well over. Jazz defensively are allowing 119+ PPG over their last 10 — they simply can't stop anyone right now. Pelicans have gone over in 7 of their last 9 on the road. The 244.5 number is beatable given Utah's defensive struggles and both teams' pace.</p>
+      <div class="pick-foot"><span>Fox Sports</span><span>Bet365: O/U 244.5</span></div>
+    </a>
   </div>
 
   <footer>NBA Bets Daily &nbsp;·&nbsp; Powered by Wally &nbsp;·&nbsp; Entertainment only — not gambling advice</footer>
-  <script>document.getElementById('ct').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});</script>
 </body>
 </html>
