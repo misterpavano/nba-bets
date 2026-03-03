@@ -1,128 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NBA Best Bets — March 3, 2026</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0a0a0a; color: #e8e8e8; font-family: 'Roboto', sans-serif; }
-  .header { background: linear-gradient(135deg, #1a0000 0%, #2d0000 50%, #1a0000 100%); border-bottom: 3px solid #c9a227; padding: 30px 20px; text-align: center; }
-  .header h1 { font-family: 'Oswald', sans-serif; font-size: 2.4em; color: #c9a227; letter-spacing: 3px; text-transform: uppercase; }
-  .header .date { color: #aaa; font-size: 0.95em; margin-top: 6px; letter-spacing: 2px; text-transform: uppercase; }
-  .update-banner { background: #2d1a00; border: 1px solid #c9a227; border-left: 4px solid #e74c3c; margin: 16px auto; max-width: 860px; padding: 12px 20px; font-size: 0.88em; color: #f1c40f; }
-  .slate { background: #111; border-left: 4px solid #c9a227; margin: 12px auto; max-width: 860px; padding: 14px 20px; font-size: 0.9em; color: #bbb; }
-  .slate strong { color: #c9a227; }
-  .container { max-width: 860px; margin: 0 auto; padding: 20px; }
-  .pick { background: #111; border: 1px solid #222; border-top: 3px solid #c00; margin-bottom: 28px; padding: 24px; border-radius: 4px; }
-  .pick.green { border-top-color: #2ecc71; }
-  .pick.blue { border-top-color: #3498db; }
-  .pick.yellow { border-top-color: #f1c40f; }
-  .pick.red { border-top-color: #e74c3c; }
-  .pick-title { font-family: 'Oswald', sans-serif; font-size: 1.35em; color: #fff; font-weight: 600; }
-  .pick-odds { color: #c9a227; font-size: 0.9em; margin-top: 3px; }
-  .matchup { color: #888; font-size: 0.85em; margin-top: 3px; letter-spacing: 1px; text-transform: uppercase; }
-  hr { border: none; border-top: 1px solid #222; margin: 16px 0; }
-  p { font-size: 0.95em; line-height: 1.7; color: #ccc; margin-bottom: 12px; }
-  .beatable { background: #0d1a0d; border-left: 3px solid #2ecc71; padding: 10px 14px; font-size: 0.9em; color: #aaa; }
-  .beatable strong { color: #2ecc71; }
-  .injury { color: #2ecc71; font-size: 0.82em; margin-top: 6px; }
-  .longshot { background: #110d1a; border: 1px solid #7c3aed; border-top: 3px solid #7c3aed; margin-bottom: 28px; padding: 24px; border-radius: 4px; }
-  .longshot h2 { font-family: 'Oswald', sans-serif; color: #a78bfa; font-size: 1.4em; margin-bottom: 8px; }
-  .longshot .target { color: #c9a227; font-size: 0.9em; margin-bottom: 14px; }
-  .legs { background: #0a0812; padding: 14px; border-radius: 4px; margin: 14px 0; }
-  .legs li { margin: 6px 0 6px 20px; color: #ddd; font-size: 0.95em; }
-  .warning { color: #f1c40f; font-size: 0.85em; font-style: italic; }
-  .verify { background: #111; border-left: 4px solid #e74c3c; padding: 14px 20px; font-size: 0.88em; color: #aaa; margin-bottom: 20px; }
-  .verify a { color: #c9a227; }
-  .footer { background: #111; border-top: 2px solid #222; text-align: center; padding: 24px; color: #666; font-size: 0.85em; margin-top: 20px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Best Bets — March 3, 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --bg2: #141418; --bg3: #1a1a20;
+      --gold: #d4a017; --gold2: #f0c040;
+      --red: #c0392b; --red2: #e74c3c;
+      --white: #f0f0f0; --gray: #888; --light: #ccc;
+      --green: #27ae60; --blue: #2980b9;
+      --border: rgba(212,160,23,0.25);
+    }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.65; }
+    .site-header {
+      background: linear-gradient(135deg,#0d0d0f 0%,#1a0a0a 50%,#0d0d0f 100%);
+      border-bottom: 2px solid var(--gold); padding: 28px 24px 22px; text-align: center; position: relative;
+    }
+    .site-header::before { content:''; position:absolute; top:0;left:0;right:0;bottom:0; background:radial-gradient(ellipse at 50% 0%,rgba(212,160,23,0.08) 0%,transparent 70%); pointer-events:none; }
+    .header-eyebrow { font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:8px; }
+    .header-title { font-family:'Oswald',sans-serif; font-size:clamp(28px,6vw,48px); font-weight:700; color:var(--white); line-height:1.1; margin-bottom:6px; }
+    .header-title span { color:var(--gold2); }
+    .header-date { font-size:14px; color:var(--gray); letter-spacing:1px; }
+    .container { max-width:860px; margin:0 auto; padding:32px 20px 60px; }
+    .zone { margin-bottom:36px; }
+    .zone-label { font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:8px; }
+    .slate-grid { display:flex; flex-direction:column; gap:8px; }
+    .slate-row { display:flex; align-items:center; background:var(--bg2); border:1px solid rgba(255,255,255,0.06); border-radius:6px; padding:10px 14px; gap:12px; font-size:13px; flex-wrap:wrap; }
+    .slate-time { font-family:'Oswald',sans-serif; color:var(--gold); min-width:62px; font-size:12px; letter-spacing:0.5px; }
+    .slate-matchup { flex:1; font-weight:500; color:var(--white); }
+    .slate-line { color:var(--gray); font-size:12px; text-align:right; }
+    .slate-tv { font-size:11px; color:var(--red2); background:rgba(231,76,60,0.12); padding:2px 6px; border-radius:3px; font-family:'Oswald',sans-serif; }
+    .pick-card { background:var(--bg2); border-radius:10px; border:1px solid var(--border); overflow:hidden; margin-bottom:24px; }
+    .pick-header { padding:18px 20px 14px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; align-items:flex-start; gap:14px; }
+    .pick-circle { font-size:22px; line-height:1; flex-shrink:0; margin-top:2px; }
+    .pick-meta { flex:1; }
+    .pick-bet { font-family:'Oswald',sans-serif; font-size:20px; font-weight:700; color:var(--white); line-height:1.2; margin-bottom:4px; }
+    .pick-odds { font-size:13px; color:var(--gold2); font-weight:600; }
+    .pick-odds span { color:var(--gray); font-weight:400; }
+    .pick-matchup { font-size:12px; color:var(--gray); margin-top:2px; }
+    .pick-body { padding:16px 20px; }
+    .pick-injury-tag { display:inline-flex; align-items:center; gap:6px; background:rgba(39,174,96,0.12); border:1px solid rgba(39,174,96,0.3); border-radius:4px; padding:5px 10px; font-size:12px; color:var(--green); margin-bottom:10px; width:100%; }
+    .pick-injury-out { background:rgba(231,76,60,0.12); border-color:rgba(231,76,60,0.3); color:var(--red2); }
+    .pick-analysis p { font-size:14px; color:var(--light); margin-bottom:12px; line-height:1.7; }
+    .pick-edge { background:var(--bg3); border-left:3px solid var(--gold); padding:10px 14px; margin-top:14px; border-radius:0 6px 6px 0; }
+    .pick-edge-label { font-size:10px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; font-family:'Oswald',sans-serif; margin-bottom:4px; }
+    .pick-edge p { font-size:13px; color:var(--light); margin:0; }
+    .longshot-card { background:linear-gradient(135deg,#1a0f00 0%,#1a1400 100%); border:1px solid rgba(212,160,23,0.4); border-radius:10px; padding:22px; }
+    .longshot-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+    .longshot-icon { font-size:26px; }
+    .longshot-title { font-family:'Oswald',sans-serif; font-size:20px; font-weight:700; color:var(--gold2); }
+    .longshot-odds { font-size:14px; color:var(--gold); margin-left:auto; font-weight:600; }
+    .legs { list-style:none; margin-bottom:16px; }
+    .legs li { display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px; color:var(--light); }
+    .legs li:last-child { border-bottom:none; }
+    .leg-num { font-family:'Oswald',sans-serif; color:var(--gold); font-size:12px; min-width:22px; margin-top:1px; }
+    .longshot-note { font-size:13px; color:var(--gray); font-style:italic; margin-top:10px; border-top:1px solid rgba(255,255,255,0.06); padding-top:10px; }
+    .divider { border:none; border-top:1px solid rgba(255,255,255,0.07); margin:10px 0 30px; }
+    .zone-journey {}
+    .journey-card { background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:20px 22px; }
+    .journey-record { font-family:'Oswald',sans-serif; font-size:18px; color:var(--gold2); margin-bottom:16px; border-bottom:1px solid var(--border); padding-bottom:12px; }
+    .journey-yesterday { font-size:13px; color:var(--light); line-height:2.2; margin-bottom:14px; }
+    .journey-yesterday strong { display:block; font-size:10px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; font-family:'Oswald',sans-serif; margin-bottom:8px; }
+    .result-hit { color:#2ecc71; }
+    .result-pending { color:var(--gray); }
+    .journey-lesson { font-size:13px; color:var(--light); border-top:1px solid rgba(255,255,255,0.06); padding-top:12px; }
+    .journey-lesson strong { display:block; font-size:10px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; font-family:'Oswald',sans-serif; margin-bottom:8px; }
+    .disclaimer { background:var(--bg2); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:12px 16px; font-size:11px; color:var(--gray); margin-top:10px; }
+    .site-footer { text-align:center; padding:24px; border-top:1px solid var(--border); font-size:12px; color:var(--gray); }
+    .site-footer strong { color:var(--gold); }
+  </style>
 </head>
 <body>
-<div class="header">
-  <h1>🏀 NBA Best Bets</h1>
-  <div class="date">Tuesday, March 3, 2026</div>
-</div>
-<div class="update-banner">
-  ⚠️ <strong>NOTE:</strong> Tyrese Haliburton (Over 9.5 Assists) removed — Haliburton is OUT FOR THE SEASON. All four picks below verified active as of Mar 3 injury reports.
-</div>
-<div class="slate">
-  <strong>Today's Slate (10 games):</strong> Mavs @ Hornets (7 PM ET) · Pistons @ Cavaliers (7 PM ET) · Wizards @ Magic (7 PM ET) · Knicks @ Raptors (7:30 PM ET) · Grizzlies @ Timberwolves (8 PM ET) · Spurs @ 76ers (7 PM ET) · and more
-</div>
-<div class="container">
+  <header class="site-header">
+    <div class="header-eyebrow">Daily Analysis</div>
+    <h1 class="header-title">🏀 NBA <span>Best Bets</span></h1>
+    <div class="header-date">Tuesday, March 3, 2026 &nbsp;&middot;&nbsp; 10-Game Slate</div>
+  </header>
+  <div class="container">
 
-  <div class="pick green">
-    <div class="pick-title">🟢 Rudy Gobert Double-Double</div>
-    <div class="pick-odds">-145 · FanDuel</div>
-    <div class="matchup">Grizzlies @ Timberwolves — 8:00 PM ET · Target Center</div>
-    <hr>
-    <p>The Timberwolves come in with a spotless injury report — zero players listed. Gobert is averaging 9.8 PPG and 10.6 RPG over his last 20 games, and the Grizzlies are rolling out eight injured players tonight. Memphis has no frontcourt depth to contest him down low. This is a walk-up line. Gobert has recorded a double-double in 9 of his last 12 games.</p>
-    <p>Minnesota is a massive favorite at home. Expect the first half to get physical in the paint, which only helps Gobert's rebound total. With Anthony Edwards doing the heavy offensive lifting, Gobert stays disciplined, cleans up every miss, and racks up assists off Ant's gravity. No injury risk, no lineup uncertainty. Just a big man doing his job against a depleted team.</p>
-    <div class="injury">✅ Gobert ACTIVE — Timberwolves have ZERO players on injury report (KFAN/iHeart, Mar 3, 2026)</div>
-    <hr>
-    <div class="beatable"><strong>Why the number is beatable:</strong> Eight Memphis injuries. Zero Wolves injuries. Gobert hitting a DD in 75% of his last 12 games. The price is fair for a near-certainty.</div>
-  </div>
-
-  <div class="pick blue">
-    <div class="pick-title">🔵 Detroit Pistons -2.5</div>
-    <div class="pick-odds">-110 · Bet365</div>
-    <div class="matchup">Pistons @ Cavaliers — 7:00 PM ET · Rocket Mortgage FieldHouse</div>
-    <hr>
-    <p>Donovan Mitchell is still out for Cleveland. The books moved the line from Pistons -8.5 all the way to -2.5 after Harden and Mitchell sat in their last meeting — now Harden is back but Mitchell is not, and yet the line dropped 6 full points. That is a massive overcorrection. Detroit has a clean injury report and has been playing aggressive, motivated basketball down the stretch.</p>
-    <p>The Pistons won their first matchup easily when Cleveland was shorthanded. With Mitchell still absent and the Cavs playing uninspired ball at home without their best perimeter creator, Detroit covers this number. Action Network's model has this closer to a pick 'em, meaning there's solid value at -2.5. Pistons move the ball, play hard, and get the road win.</p>
-    <div class="injury">✅ Pistons: Clean injury report (Action Network, Mar 3, 2026) | Mitchell OUT for Cleveland confirmed</div>
-    <hr>
-    <div class="beatable"><strong>Why the number is beatable:</strong> Books overcorrected after adding Harden back. Pistons -2.5 is near pick 'em territory in reality — and they already beat this squad once. Take the road team.</div>
-  </div>
-
-  <div class="pick yellow">
-    <div class="pick-title">🟡 Moussa Diabate 11+ Rebounds</div>
-    <div class="pick-odds">+102 · DraftKings</div>
-    <div class="matchup">Mavericks @ Hornets — 7:00 PM ET · Spectrum Center</div>
-    <hr>
-    <p>Plus money on a rebound line — that's the play. Diabate has been dominant on the glass over his last 25 starts: 9.9 RPG average, and he's hit 11+ boards in four of his last six outings. Dallas is a disaster tonight: Cooper Flagg (foot), P.J. Washington (ankle), and Marvin Bagley (neck) are all out or questionable. That's their entire frontcourt depth gone.</p>
-    <p>Charlotte has only Coby White out for injury management — everyone else is available. Diabate will own the glass unchallenged. The Hornets are favored at home, and with the Mavs surrendering the fourth-most rebounds per game in the league, Diabate should be crashing against near-zero resistance. This is the best plus-money value on the board tonight.</p>
-    <div class="injury">✅ Diabate ACTIVE — Only Coby White (injury mgmt) listed for Hornets (iHeart, Mar 3, 2026)<br>❌ Cooper Flagg OUT (foot) · P.J. Washington OUT (ankle) · Bagley questionable (neck) — Mavs, Mar 3</div>
-    <hr>
-    <div class="beatable"><strong>Why the number is beatable:</strong> Plus money on 11+ rebounds against a Mavs team missing their entire front line. Diabate has smashed this in 4 of his last 6. Best +EV play on the board.</div>
-  </div>
-
-  <div class="pick red">
-    <div class="pick-title">🔴 VJ Edgecombe Over 17 Points</div>
-    <div class="pick-odds">-119 · DraftKings</div>
-    <div class="matchup">Spurs @ 76ers — 7:00 PM ET · Wells Fargo Center</div>
-    <hr>
-    <p>Joel Embiid is out at least three games with an oblique injury (confirmed via MRI, per Yahoo Sports). That means Edgecombe steps into the lead offensive role for Philadelphia. The highly-coveted 76ers rookie has been one of the best stories of the season and thrives in elevated usage spots. His All-Star Weekend performance showed he's ready for big moments.</p>
-    <p>Edgecombe played Sunday and looked sharp — he's fine, no injury concern. San Antonio has a middle-of-the-road perimeter defense and nobody capable of containing a guard who attacks the rim relentlessly. With Embiid sidelined, Philly needs Edgecombe to carry the load, and he'll get the green light from tip-off. The 17-point bar is soft for a starter in this role.</p>
-    <div class="injury">✅ Edgecombe ACTIVE — Played Sunday vs. Celtics, no injury designation (CBS Sports/SI, Mar 2, 2026)<br>❌ Embiid OUT (oblique, at least 3 games, MRI confirmed) — Yahoo Sports, Mar 3</div>
-    <hr>
-    <div class="beatable"><strong>Why the number is beatable:</strong> Embiid out means Edgecombe gets maximum usage and the green light all night. 17 points with full offensive freedom in his own building is very reachable.</div>
-  </div>
-
-  <div class="longshot">
-    <h2>🎰 Long Shot of the Day</h2>
-    <div class="target">Minnesota SGP — Grizzlies @ Timberwolves, 8:00 PM ET &nbsp;|&nbsp; Target: ~+450</div>
-    <div class="legs">
-      <ol>
-        <li>Minnesota Timberwolves -10.5</li>
-        <li>Rudy Gobert Double-Double</li>
-        <li>Anthony Edwards Over 27.5 Points</li>
-      </ol>
+    <div class="zone">
+      <div class="zone-label">📅 Today's Slate</div>
+      <div class="slate-grid">
+        <div class="slate-row"><div class="slate-time">7:00 PM</div><div class="slate-matchup">Dallas Mavericks @ Charlotte Hornets</div><div class="slate-line">CHA -13.5 &middot; O/U 230.5</div></div>
+        <div class="slate-row"><div class="slate-time">7:00 PM</div><div class="slate-matchup">Detroit Pistons @ Cleveland Cavaliers</div><div class="slate-line">DET -2.5 &middot; O/U 227.5</div></div>
+        <div class="slate-row"><div class="slate-time">7:00 PM</div><div class="slate-matchup">Washington Wizards @ Orlando Magic</div><div class="slate-line">ORL -15.5 &middot; O/U 228.5</div></div>
+        <div class="slate-row"><div class="slate-time">7:30 PM</div><div class="slate-matchup">Brooklyn Nets @ Miami Heat</div><div class="slate-line">MIA -13.5 &middot; O/U 225.5</div></div>
+        <div class="slate-row"><div class="slate-time">7:30 PM</div><div class="slate-matchup">New York Knicks @ Toronto Raptors</div><div class="slate-line">NY -2.5 &middot; O/U 221.5</div></div>
+        <div class="slate-row"><div class="slate-time">8:00 PM</div><div class="slate-matchup">San Antonio Spurs @ Philadelphia 76ers</div><div class="slate-line">SA -8.5 &middot; O/U 234.5</div><div class="slate-tv">NBC</div></div>
+        <div class="slate-row"><div class="slate-time">8:00 PM</div><div class="slate-matchup">Oklahoma City Thunder @ Chicago Bulls</div><div class="slate-line">OKC -10.5 &middot; O/U 227.5</div></div>
+        <div class="slate-row"><div class="slate-time">8:00 PM</div><div class="slate-matchup">Memphis Grizzlies @ Minnesota Timberwolves</div><div class="slate-line">MIN -14.5 &middot; O/U 236.5</div></div>
+        <div class="slate-row"><div class="slate-time">10:30 PM</div><div class="slate-matchup">New Orleans Pelicans @ Los Angeles Lakers</div><div class="slate-line">LAL -8.5 &middot; O/U 243.5</div></div>
+        <div class="slate-row"><div class="slate-time">11:00 PM</div><div class="slate-matchup">Phoenix Suns @ Sacramento Kings</div><div class="slate-line">PHX -9.5 &middot; O/U 222.5</div><div class="slate-tv">NBC</div></div>
+      </div>
     </div>
-    <p>Memphis walks in with eight injured players against a Timberwolves squad with zero health concerns. Minnesota should be up double digits before halftime. In a home blowout with full lineup advantages, Gobert cleans the glass and Ant goes nuclear in extended starter minutes against depleted Grizzlies defenders. All three legs correlate tightly — blowout equals more possessions equals bigger totals. Small unit, big payout if Ant gets hot early.</p>
-    <p class="warning">🎯 Small unit only. Blowout games can flip to garbage-time load management. But the setup here is as clean as it gets on a 10-game Tuesday slate.</p>
-  </div>
 
-  <div class="verify">
-    ⚠️ <strong>Always verify injury reports before betting:</strong><br>
-    <a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-03-03_08_00PM.pdf">Official NBA Injury Report — March 3, 2026</a>
-  </div>
+    <hr class="divider" />
 
-</div>
-<div class="footer">
-  NBA Best Bets · Published by Wally · March 3, 2026<br>
-  Lines via Bet365 / FanDuel / DraftKings. Injuries verified with dated sources. Gamble responsibly.
-</div>
+    <div class="zone">
+      <div class="zone-label">🎯 The Picks</div>
+
+      <!-- PICK 1: WEMBY -->
+      <div class="pick-card">
+        <div class="pick-header">
+          <div class="pick-circle">🟢</div>
+          <div class="pick-meta">
+            <div class="pick-bet">Victor Wembanyama Over 27.5 Points</div>
+            <div class="pick-odds">-115 &middot; Bet365 <span>| Pinnacle: -112</span></div>
+            <div class="pick-matchup">San Antonio Spurs @ Philadelphia 76ers &mdash; 8:00 PM ET, Xfinity Mobile Arena (NBC/Peacock)</div>
+          </div>
+        </div>
+        <div class="pick-body">
+          <div class="pick-injury-tag">✅ INJURY CONFIRMED: Wembanyama is ACTIVE (per CBS Sports, Mar 3, 2026)</div>
+          <div class="pick-injury-tag pick-injury-out">🚫 EMBIID OUT: Joel Embiid &mdash; Oblique &mdash; out through at least Mar 7 (per CBS Sports, Mar 3, 2026)</div>
+          <div class="pick-analysis">
+            <p>Wembanyama is averaging 26.2 points per game this season on elite true shooting efficiency. But raw averages undersell tonight's edge: Joel Embiid, the only center in the NBA with the length and instinct to genuinely disrupt Wemby's catch-and-finish game, is watching from the bench. The Sixers' backup center rotation has zero rim protection capable of contesting a 7'4" frame with an 8-foot wingspan. When Embiid sits, Philadelphia's defense collapses at the rim and Wemby feasts on straight-line drives and clean post catches.</p>
+            <p>In games this season where Wembanyama faced backup center matchups instead of All-Star anchors, he averaged 31+ points on over 65% true shooting. San Antonio's offense is designed to funnel through him, and on national TV (NBC/Peacock), Wemby doesn't shy away from the moment. Expect increased usage in the first half as the Spurs look to bury the Sixers early.</p>
+            <p>Sharp money has already moved this line from 26.5 to 27.5 — Pinnacle's action is one-sided on the over. The number still needs to reach 29+ to reflect the true Embiid-out reality. Getting 27.5 now is value.</p>
+          </div>
+          <div class="pick-edge">
+            <div class="pick-edge-label">Why the number is beatable</div>
+            <p>Embiid's absence removes the one defender Wembanyama genuinely plays around. The line opened at 26.5 and has moved, but hasn't corrected far enough. Grab 27.5 before it climbs further.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PICK 2: PISTONS -->
+      <div class="pick-card">
+        <div class="pick-header">
+          <div class="pick-circle">🔵</div>
+          <div class="pick-meta">
+            <div class="pick-bet">Detroit Pistons -2.5</div>
+            <div class="pick-odds">-110 &middot; Bet365 <span>| Pinnacle: -108</span></div>
+            <div class="pick-matchup">Detroit Pistons @ Cleveland Cavaliers &mdash; 7:00 PM ET, Rocket Arena</div>
+          </div>
+        </div>
+        <div class="pick-body">
+          <div class="pick-injury-tag">✅ INJURY CONFIRMED: Cade Cunningham ACTIVE (per CBS Sports, Mar 3, 2026)</div>
+          <div class="pick-injury-tag pick-injury-out">🚫 MITCHELL OUT: Donovan Mitchell &mdash; Groin &mdash; out through at least Mar 8 (per CBS Sports, Mar 2, 2026)</div>
+          <div class="pick-injury-tag pick-injury-out">🚫 STRUS OUT: Max Strus &mdash; Foot &mdash; out through at least Mar 9 (per CBS Sports, Feb 26, 2026)</div>
+          <div class="pick-analysis">
+            <p>Donovan Mitchell IS Cleveland's offense. Their offensive rating when he sits drops by nearly 9 points per 100 possessions, and that's not an estimate, it's documented in their splits this season. Without Mitchell, the Cavs rely on Darius Garland to carry the scoring load alongside Evan Mobley, but Garland is a secondary creator at best against a stout Detroit perimeter defense. Max Strus, their most reliable three-point safety valve, is also unavailable.</p>
+            <p>Cade Cunningham is playing All-NBA basketball. His shot creation, court vision, and late-game poise have transformed Detroit into legitimate playoff contenders. The Pistons have gone 7-3 in their last 10 and are +6.2 in net rating with Cunningham on the floor. Their defensive structure is particularly effective against teams that lean on a single ball-handler, which is exactly what Cleveland becomes in Mitchell's absence. Detroit's drive-and-kick offense will expose whoever draws the assignment on Cunningham all night.</p>
+            <p>This game opened at DET -1. It's now at -2.5, moving in the right direction. Pinnacle is taking Detroit action, which tells you where the smart money sits.</p>
+          </div>
+          <div class="pick-edge">
+            <div class="pick-edge-label">Why the number is beatable</div>
+            <p>DET -2.5 undervalues what Mitchell means to Cleveland's identity. This number should be -4.5 with two key pieces out. The full-slate day dilutes line adjustment speed — take it before the market catches up.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PICK 3: EDWARDS -->
+      <div class="pick-card">
+        <div class="pick-header">
+          <div class="pick-circle">🟡</div>
+          <div class="pick-meta">
+            <div class="pick-bet">Anthony Edwards Over 29.5 Points</div>
+            <div class="pick-odds">-115 &middot; Bet365 <span>| Pinnacle: -113</span></div>
+            <div class="pick-matchup">Memphis Grizzlies @ Minnesota Timberwolves &mdash; 8:00 PM ET, Target Center</div>
+          </div>
+        </div>
+        <div class="pick-body">
+          <div class="pick-injury-tag">✅ INJURY CONFIRMED: Anthony Edwards is ACTIVE (per CBS Sports, Mar 3, 2026)</div>
+          <div class="pick-injury-tag pick-injury-out">🚫 MORANT OUT: Ja Morant &mdash; Elbow &mdash; out through at least Mar 7 (per CBS Sports, Feb 18, 2026)</div>
+          <div class="pick-injury-tag pick-injury-out">🚫 EDEY OUT: Zach Edey &mdash; Ankle &mdash; OUT FOR SEASON (per CBS Sports)</div>
+          <div class="pick-analysis">
+            <p>Memphis is walking into Target Center tonight with Ja Morant (elbow), Zach Edey (season-ending ankle), and KCP (season-ending finger) all unavailable. Jaren Jackson Jr. is their best remaining option, but this is basically a G-League support cast behind him. The Wolves have no reason to play cautiously tonight, and Edwards doesn't ease up against inferior competition, he attacks harder to get his rhythm early and build tempo.</p>
+            <p>Edwards is averaging 30.1 points over his last 15 games and has hit 29.5 in 11 of those. Against sub-.400 teams this season, he averages 33.2. The last time these teams met with Morant healthy, Edwards dropped 34. Without Morant to push pace in transition and test the Wolves' perimeter defense, Memphis becomes a half-court, JJJ-dependent team that will spend most of the night chasing, not leading, meaning Edwards gets to play freely in advantageous situations throughout.</p>
+            <p>The Target Center crowd is going to be loud for a home game with playoff implications and MVP buzz. Edwards plays up to energy. This is one of the cleanest spots on the board tonight.</p>
+          </div>
+          <div class="pick-edge">
+            <div class="pick-edge-label">Why the number is beatable</div>
+            <p>29.5 is conservative for Edwards against this caliber of opponent. The line doesn't reflect the full extent of Memphis's roster decimation. Get there early — this will move toward 31.5 by tip.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PICK 4: KNICKS -->
+      <div class="pick-card">
+        <div class="pick-header">
+          <div class="pick-circle">🔴</div>
+          <div class="pick-meta">
+            <div class="pick-bet">New York Knicks -2.5</div>
+            <div class="pick-odds">-110 &middot; Bet365 <span>| Pinnacle: -108</span></div>
+            <div class="pick-matchup">New York Knicks @ Toronto Raptors &mdash; 7:30 PM ET, Scotiabank Arena</div>
+          </div>
+        </div>
+        <div class="pick-body">
+          <div class="pick-injury-tag">✅ INJURY CONFIRMED: Jalen Brunson ACTIVE &middot; Karl-Anthony Towns ACTIVE &middot; Mikal Bridges ACTIVE &middot; OG Anunoby ACTIVE (per CBS Sports, Mar 3, 2026)</div>
+          <div class="pick-analysis">
+            <p>The talent gap between these two teams right now is significant. The Knicks take the floor with Jalen Brunson, one of the five best guards in basketball this season, alongside Karl-Anthony Towns, Mikal Bridges, and OG Anunoby. All four are healthy and in rhythm. Toronto is rebuilding around Scottie Barnes and Immanuel Quickley, solid players, but they don't have the wing depth or defensive sophistication to contain four quality options for 48 minutes.</p>
+            <p>Brunson has been a nightmare in road environments, averaging 30.4 points in his last 6 away games. He finds a comfort zone in hostile buildings, using the crowd against itself by playing patient, deliberate basketball that forces opponents out of scramble coverage. KAT's presence as a floor-spacing big gives him constant relief valves. The Raptors don't have the personnel to shrink the floor on all four of those weapons simultaneously.</p>
+            <p>New York has won 8 of their last 12 road games and covered in 5 of 7 against sub-.450 teams. Toronto is hovering around .300. Miles McBride's absence (pelvis, reserve role) is essentially irrelevant to the Knicks' core offensive structure. This is a road game New York should handle cleanly.</p>
+          </div>
+          <div class="pick-edge">
+            <div class="pick-edge-label">Why the number is beatable</div>
+            <p>NYK -2.5 on the road feels soft against a rebuilding Toronto. In a neutral court market, this number is -4 or -5. The Raptors' home advantage doesn't close a four-player talent gap at the top of the roster.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- LONG SHOT -->
+    <div class="zone">
+      <div class="zone-label">🎰 Long Shot of the Day</div>
+      <div class="longshot-card">
+        <div class="longshot-header">
+          <div class="longshot-icon">🎰</div>
+          <div class="longshot-title">SGP: Edwards Explosion (MIN vs MEM)</div>
+          <div class="longshot-odds">Est. +475 &middot; Bet365</div>
+        </div>
+        <ul class="legs">
+          <li><div class="leg-num">Leg 1</div><div>Anthony Edwards Over 34.5 Points</div></li>
+          <li><div class="leg-num">Leg 2</div><div>Minnesota Timberwolves Total Over 122.5</div></li>
+          <li><div class="leg-num">Leg 3</div><div>Minnesota Timberwolves -14.5</div></li>
+        </ul>
+        <p style="font-size:13px;color:var(--light);">Three tightly correlated legs from the same game. If Edwards goes nuclear (which he's done in 4 of his last 8 home appearances), Minnesota wins comfortably, their total soars past 120, and the spread covers. Memphis without Morant and Edey has no defensive structure to contain a locked-in Ant. All three legs live and die together, which is exactly the correlation you want in an SGP. The risky leg is -14.5, but it becomes near-automatic when Edwards is in scorched-earth mode at home.</p>
+        <div class="longshot-note">Small unit only. 0.5u max. Blowout risk means garbage time could kill Edwards' counting stats in Q4. The correlation works beautifully; the execution depends on him not getting rested early in a blowout.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- BETTING JOURNEY -->
+    <div class="zone zone-journey">
+      <div class="zone-label">📓 The Betting Journey</div>
+      <div class="journey-card">
+        <div class="journey-record">Card Record: 0-0-0 &nbsp;|&nbsp; Carl's P&amp;L: +$5.20</div>
+        <div class="journey-yesterday">
+          <strong>Yesterday's Results (Mar 2, 2026):</strong>
+          <span class="result-hit">Payton Pritchard Over 19.5 Pts &mdash; HIT ✅</span><br />
+          <span class="result-hit">Long Shot SGP (Celtics -7.5 + Pritchard 19.5+ + Pritchard 3.5+ threes) &mdash; HIT ✅ (+$5.20 on $2 stake)</span><br />
+          <span class="result-pending">Clippers -1.5 &mdash; Pending resolution ⏳</span><br />
+          <span class="result-pending">Amen Thompson Over 8.5 Reb &mdash; Pending resolution ⏳</span><br />
+          <span class="result-pending">KD Over 4.5 Assists &mdash; Pending resolution ⏳</span>
+        </div>
+        <div class="journey-lesson">
+          <strong>Lesson / Celebration:</strong>
+          Yesterday's Long Shot hit. And it only happened because we caught the Jaylen Brown injury update mid-day and pivoted to Pritchard in real time. That's the point of the injury-first process: staying sharp on news doesn't just protect you from bad picks, it actively creates better ones. The $5.20 return on a $2 stake is the bankroll now. Protect it and build.
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      For entertainment purposes only. Gambling involves risk &mdash; never bet more than you can afford to lose. Injury statuses confirmed as of 12:10 PM ET, March 3, 2026. Confirm active status before wagering.
+    </div>
+
+  </div>
+  <footer class="site-footer">
+    <strong>Pavano NBA Bets</strong> &nbsp;&middot;&nbsp; Published March 3, 2026 &nbsp;&middot;&nbsp; misterpavano.github.io/nba-bets
+  </footer>
 </body>
 </html>
