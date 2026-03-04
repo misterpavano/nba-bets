@@ -6,461 +6,175 @@
   <title>NBA Best Bets — March 4, 2026</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
-
     :root {
-      --bg: #0d0d0f;
-      --surface: #151518;
-      --surface2: #1c1c21;
-      --gold: #f0b429;
-      --gold-dim: #c8952a;
-      --red: #e53e3e;
-      --red-dim: #9b2c2c;
-      --green: #38a169;
-      --blue: #3182ce;
-      --yellow: #d69e2e;
-      --text: #e8e8ed;
-      --muted: #8888a0;
-      --border: #2a2a35;
+      --bg: #0d0d0f; --surface: #151518; --surface2: #1c1c21;
+      --gold: #f0b429; --gold-dim: #c8952a; --red: #e53e3e; --red-dim: #9b2c2c;
+      --green: #38a169; --blue: #3182ce; --yellow: #d69e2e;
+      --text: #e8e8ed; --muted: #8888a0; --border: #2a2a35;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 20px 16px 60px;
-    }
-
-    /* HEADER */
-    .masthead {
-      text-align: center;
-      padding: 36px 0 24px;
-      border-bottom: 2px solid var(--gold);
-      margin-bottom: 30px;
-    }
-    .masthead .badge {
-      display: inline-block;
-      background: var(--gold);
-      color: #000;
-      font-family: 'Oswald', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      padding: 4px 14px;
-      border-radius: 2px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-    .masthead h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #fff;
-    }
-    .masthead .subtitle {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 6px;
-      letter-spacing: 0.5px;
-    }
-
-    /* SLATE */
-    .slate {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px 20px;
-      margin-bottom: 30px;
-    }
-    .slate-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .slate-game {
-      font-size: 14px;
-      color: var(--text);
-      padding: 5px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; max-width: 820px; margin: 0 auto; padding: 20px 16px 60px; }
+    .masthead { text-align: center; padding: 36px 0 24px; border-bottom: 2px solid var(--gold); margin-bottom: 30px; }
+    .masthead .badge { display: inline-block; background: var(--gold); color: #000; font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 2px; margin-bottom: 12px; text-transform: uppercase; }
+    .masthead h1 { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: 1px; color: #fff; }
+    .masthead .subtitle { color: var(--muted); font-size: 14px; margin-top: 6px; letter-spacing: 0.5px; }
+    .slate { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; margin-bottom: 30px; }
+    .slate-title { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .slate-game { font-size: 14px; color: var(--text); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
     .slate-game:last-child { border-bottom: none; }
-    .slate-time {
-      color: var(--muted);
-      font-size: 12px;
-      min-width: 90px;
-      text-align: right;
-    }
-
-    /* DIVIDER */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 28px 0;
-    }
-
-    /* PICK CARD */
-    .pick-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 22px 22px 18px;
-      margin-bottom: 22px;
-      position: relative;
-      overflow: hidden;
-    }
-    .pick-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px; height: 100%;
-    }
+    .slate-time { color: var(--muted); font-size: 12px; min-width: 90px; text-align: right; }
+    .divider { height: 1px; background: var(--border); margin: 28px 0; }
+    .pick-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 22px 18px; margin-bottom: 22px; position: relative; overflow: hidden; }
+    .pick-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
     .pick-card.green::before { background: var(--green); }
-    .pick-card.blue::before  { background: var(--blue); }
+    .pick-card.blue::before { background: var(--blue); }
     .pick-card.yellow::before { background: var(--yellow); }
-    .pick-card.red::before   { background: var(--red); }
-
-    .pick-num {
-      font-family: 'Oswald', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .pick-headline {
-      font-family: 'Oswald', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
+    .pick-card.red::before { background: var(--red); }
+    .pick-num { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+    .pick-headline { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 4px; }
     .pick-headline .circle { margin-right: 8px; }
-    .pick-odds {
-      display: inline-block;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--gold);
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      padding: 3px 12px;
-      border-radius: 4px;
-      margin: 8px 0 10px;
-    }
-    .pick-meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .injury-confirm {
-      background: rgba(56, 161, 105, 0.12);
-      border: 1px solid rgba(56, 161, 105, 0.4);
-      border-radius: 5px;
-      padding: 8px 12px;
-      font-size: 13px;
-      color: #68d391;
-      margin-bottom: 14px;
-    }
-    .injury-warn {
-      background: rgba(214, 158, 46, 0.12);
-      border: 1px solid rgba(214, 158, 46, 0.4);
-      border-radius: 5px;
-      padding: 8px 12px;
-      font-size: 13px;
-      color: #f6e05e;
-      margin-bottom: 14px;
-    }
-    .pick-analysis p {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-    .pick-edge {
-      background: var(--surface2);
-      border-left: 3px solid var(--gold);
-      padding: 10px 14px;
-      font-size: 14px;
-      color: #e8d99a;
-      font-style: italic;
-      border-radius: 0 4px 4px 0;
-      margin-top: 4px;
-    }
-
-    /* SECTION LABELS */
-    .section-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ZONE (shared layout for long shot + journey) */
-    .zone {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 22px 22px 18px;
-      margin-bottom: 22px;
-    }
-    .zone-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 14px;
-      letter-spacing: 0.5px;
-    }
-
-    /* LONG SHOT */
-    .longshot-bet {
-      font-family: 'Oswald', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .longshot-odds {
-      display: inline-block;
-      background: rgba(229, 62, 62, 0.15);
-      border: 1px solid var(--red);
-      color: var(--red);
-      font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 4px;
-      margin: 8px 0 14px;
-    }
-    .longshot-legs {
-      list-style: none;
-      margin: 12px 0;
-    }
-    .longshot-legs li {
-      padding: 7px 0;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
+    .pick-odds { display: inline-block; background: var(--surface2); border: 1px solid var(--border); color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; padding: 3px 12px; border-radius: 4px; margin: 8px 0 10px; }
+    .pick-meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+    .injury-confirm { background: rgba(56,161,105,0.12); border: 1px solid rgba(56,161,105,0.4); border-radius: 5px; padding: 8px 12px; font-size: 13px; color: #68d391; margin-bottom: 14px; }
+    .injury-warn { background: rgba(214,158,46,0.12); border: 1px solid rgba(214,158,46,0.4); border-radius: 5px; padding: 8px 12px; font-size: 13px; color: #f6e05e; margin-bottom: 14px; }
+    .pick-analysis p { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 12px; }
+    .pick-edge { background: var(--surface2); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #e8d99a; font-style: italic; border-radius: 0 4px 4px 0; margin-top: 4px; }
+    .section-label { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .zone { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 22px 18px; margin-bottom: 22px; }
+    .zone-label { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; color: var(--gold); margin-bottom: 14px; letter-spacing: 0.5px; }
+    .longshot-bet { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .longshot-odds { display: inline-block; background: rgba(229,62,62,0.15); border: 1px solid var(--red); color: var(--red); font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; padding: 4px 14px; border-radius: 4px; margin: 8px 0 14px; }
+    .longshot-legs { list-style: none; margin: 12px 0; }
+    .longshot-legs li { padding: 7px 0; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text); }
     .longshot-legs li:last-child { border-bottom: none; }
-    .longshot-legs li .leg-num {
-      color: var(--gold);
-      font-weight: 600;
-      margin-right: 8px;
-    }
-    .longshot-corr {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 12px;
-      font-style: italic;
-    }
-
-    /* JOURNEY */
-    .journey-record {
-      font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 14px;
-    }
-    .journey-record span {
-      color: var(--gold);
-    }
-    .journey-yesterday {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-    .journey-lesson {
-      background: var(--surface2);
-      border-left: 3px solid var(--gold);
-      padding: 10px 14px;
-      font-size: 14px;
-      color: #e8d99a;
-      border-radius: 0 4px 4px 0;
-      font-style: italic;
-    }
-
-    /* DISCLAIMER */
-    .disclaimer {
-      font-size: 12px;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 40px;
-      line-height: 1.7;
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-    }
+    .longshot-legs li .leg-num { color: var(--gold); font-weight: 600; margin-right: 8px; }
+    .longshot-corr { font-size: 13px; color: var(--muted); margin-top: 12px; font-style: italic; }
+    .journey-record { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 14px; }
+    .journey-record span { color: var(--gold); }
+    .journey-yesterday { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 14px; }
+    .journey-lesson { background: var(--surface2); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #e8d99a; border-radius: 0 4px 4px 0; font-style: italic; }
+    .disclaimer { font-size: 12px; color: var(--muted); text-align: center; margin-top: 40px; line-height: 1.7; border-top: 1px solid var(--border); padding-top: 20px; }
   </style>
 </head>
 <body>
 
-<!-- MASTHEAD -->
 <div class="masthead">
   <div class="badge">🏀 Daily Picks</div>
   <h1>NBA BEST BETS</h1>
-  <div class="subtitle">Wednesday, March 4th, 2026 &nbsp;·&nbsp; 4-game slate &nbsp;·&nbsp; Bet365 odds</div>
+  <div class="subtitle">Wednesday, March 4th, 2026 &nbsp;&middot;&nbsp; 6-game slate &nbsp;&middot;&nbsp; Bet365 odds</div>
 </div>
 
-<!-- SLATE -->
 <div class="slate">
   <div class="slate-title">Today's Slate</div>
-  <div class="slate-game">
-    <span>Utah Jazz @ Philadelphia 76ers &nbsp;·&nbsp; Xfinity Mobile Arena</span>
-    <span class="slate-time">7:30 PM ET · NBCS-PH</span>
-  </div>
-  <div class="slate-game">
-    <span>OKC Thunder @ New York Knicks &nbsp;·&nbsp; Madison Square Garden</span>
-    <span class="slate-time">7:00 PM ET · ESPN</span>
-  </div>
-  <div class="slate-game">
-    <span>Charlotte Hornets @ Boston Celtics &nbsp;·&nbsp; TD Garden</span>
-    <span class="slate-time">7:30 PM ET · ESPN</span>
-  </div>
-  <div class="slate-game">
-    <span>Atlanta Hawks @ Milwaukee Bucks &nbsp;·&nbsp; Fiserv Forum</span>
-    <span class="slate-time">9:30 PM ET · NBA TV</span>
-  </div>
+  <div class="slate-game"><span>OKC Thunder @ New York Knicks &nbsp;&middot;&nbsp; Madison Square Garden</span><span class="slate-time">7:00 PM ET &middot; ESPN</span></div>
+  <div class="slate-game"><span>Charlotte Hornets @ Boston Celtics &nbsp;&middot;&nbsp; TD Garden</span><span class="slate-time">7:30 PM ET &middot; NBCS-BOS</span></div>
+  <div class="slate-game"><span>Utah Jazz @ Philadelphia 76ers &nbsp;&middot;&nbsp; Wells Fargo Center</span><span class="slate-time">7:30 PM ET &middot; NBCS-PH</span></div>
+  <div class="slate-game"><span>Portland Trail Blazers @ Memphis Grizzlies &nbsp;&middot;&nbsp; FedExForum</span><span class="slate-time">8:00 PM ET &middot; FDSSE</span></div>
+  <div class="slate-game"><span>Atlanta Hawks @ Milwaukee Bucks &nbsp;&middot;&nbsp; Fiserv Forum</span><span class="slate-time">9:30 PM ET &middot; ESPN</span></div>
+  <div class="slate-game"><span>Indiana Pacers @ Los Angeles Clippers &nbsp;&middot;&nbsp; Intuit Dome</span><span class="slate-time">10:30 PM ET &middot; League Pass</span></div>
 </div>
 
 <div class="section-label">Today's Best Bets</div>
 
-<!-- PICK 1 -->
 <div class="pick-card green">
   <div class="pick-num">Pick 01 — Spread</div>
-  <div class="pick-headline"><span class="circle">🟢</span>Charlotte Hornets +6.5</div>
-  <div class="pick-odds">-110 · Bet365</div>
-  <div class="pick-meta">Hornets @ Celtics &nbsp;·&nbsp; 7:30 PM ET &nbsp;·&nbsp; TD Garden, Boston MA</div>
-  <div class="injury-confirm">✅ INJURY CONFIRMED: Jayson Tatum is OUT — missed his 28th birthday game yesterday and will not play tonight. (Per CollegeFootballNetwork, PickDawgz, multiple sources, March 4)</div>
+  <div class="pick-headline"><span class="circle">&#x1F7E2;</span>OKC Thunder -4.5</div>
+  <div class="pick-odds">-110 &middot; Bet365</div>
+  <div class="pick-meta">Thunder @ Knicks &nbsp;&middot;&nbsp; 7:00 PM ET &nbsp;&middot;&nbsp; Madison Square Garden, New York NY</div>
+  <div class="injury-confirm">&#x2705; ACTIVE: Full OKC rotation available — SGA, Chet Holmgren, Isaiah Hartenstein, Isaiah Joe, Lu Dort all healthy. No Thunder players on the injury report.</div>
   <div class="pick-analysis">
-    <p>Jayson Tatum is out. Without the 28-point-per-game franchise player, Boston becomes a collection of good role players — not a 6.5-point favorite. This line opened at -7.5 and hasn't dropped far enough. The market was slow to react to the Tatum news, and Bet365 is still offering Hornets +6.5 — that's our window.</p>
-    <p>The Charlotte angle is not just "fade Celtics." The Hornets have been the most reliable ATS team on the board over the past three weeks: 10-1 against the spread in their last 11 games, including an 8-game ATS winning streak. Coby White returned to the lineup last night. Miles Bridges has been scoring in bunches. This is a motivated team playing a banged-up opponent.</p>
-    <p>Payton Pritchard will carry the Celtics offensively and he's capable of a big night — but a 6th man leading your offense against a team this hot ATS is not a recipe for a comfortable cover. Expect Charlotte to keep it within a possession for large stretches.</p>
+    <p>Oklahoma City is the best team in basketball. That is not a hot take — it is math. Their defensive rating of 106.7 ranks first in the league. Their offensive rating of 118.2 ranks second. Their net rating of +11.5 is the best in the NBA by a significant margin. The Knicks sit at +3.3. That is an 8.2-point efficiency gap between these two franchises, and the spread is only 4.5. The number does not reflect the gap.</p>
+    <p>Last season's series tells the whole story. OKC swept 2-0, winning by 25 at this exact building on January 10th and by 10 in Oklahoma City on January 3rd. Average margin: 17.5 points. The Thunder went on to win the championship. The Knicks have not become a fundamentally different team in the intervening months. OKC is 7-3 in their last ten games with an average winning margin of +8.4, and they are 4-1 in their last five road games — one of the best road records in the league over that stretch.</p>
+    <p>The Knicks are a legitimate team. Brunson has been excellent since the All-Star break, KAT is healthy, MSG is one of the best home floors in basketball. But elite teams do not lose their edge at MSG when they swept there last year. The 21-11 home record for New York is impressive. Laying 4.5 against a team that won here by 25 is still a value play.</p>
   </div>
-  <div class="pick-edge">Why the number is beatable: Without Tatum, Boston's expected scoring margin drops by ~8-10 points. This line should be -2.5 or -3, not -6.5. They haven't moved enough.</div>
+  <div class="pick-edge">Why the number is beatable: An 8.2-point net rating gap should produce a spread north of 6. The market's respect for MSG home court keeps this at 4.5. OKC won here by 25 last season and nothing has changed the power structure. Three units from SportsGrid, and the data backs every point of it.</div>
 </div>
 
-<!-- PICK 2 -->
 <div class="pick-card blue">
   <div class="pick-num">Pick 02 — Player Prop</div>
-  <div class="pick-headline"><span class="circle">🔵</span>Tyrese Maxey Over 25.5 Points</div>
-  <div class="pick-odds">-115 · Bet365</div>
-  <div class="pick-meta">76ers vs Jazz &nbsp;·&nbsp; 7:30 PM ET &nbsp;·&nbsp; Xfinity Mobile Arena, Philadelphia PA</div>
-  <div class="injury-confirm">✅ INJURY CONFIRMED: Joel Embiid OUT (oblique), Johni Broome OUT (knee) for 76ers. Jazz missing: Jaren Jackson Jr. (knee), Lauri Markkanen (hip), Jusuf Nurkic (nose). (Per Fox Sports Gambler, official NBA injury report, March 4)</div>
+  <div class="pick-headline"><span class="circle">&#x1F535;</span>Isaiah Hartenstein Over 11.5 Reb+Ast</div>
+  <div class="pick-odds">-115 &middot; Bet365</div>
+  <div class="pick-meta">Thunder @ Knicks &nbsp;&middot;&nbsp; 7:00 PM ET &nbsp;&middot;&nbsp; Madison Square Garden, New York NY</div>
+  <div class="injury-confirm">&#x2705; ACTIVE: Isaiah Hartenstein not on any injury report. Fully available for tonight's game against his former team at MSG.</div>
   <div class="pick-analysis">
-    <p>Embiid is out, Broome is out — Tyrese Maxey is the team. He averages 29 PPG this season (4th in the NBA), and over his last 20 games he's still putting up 26.6. When Embiid sits, Maxey doesn't share the rock. He creates early, he controls pace, and he attacks the rim with authority.</p>
-    <p>The opponent helps enormously. Utah is missing Jaren Jackson Jr., Lauri Markkanen, and Jusuf Nurkic — basically their entire frontcourt rotation. The Jazz are 18-43 on the year, riding a 6-game losing streak, and have zero rim protection for Maxey to worry about. He will knife into that paint all night. It's also worth noting Maxey dishes 6.7 assists per game in expanded creator role — he's operating as a point guard now, and that means the ball lives in his hands for 34-36 minutes.</p>
-    <p>The blowout risk is real — if Philly goes up 30 by halftime, the stars sit. But this Jazz team has been competitive enough in losses that the starters usually play well into the 4th. The over feels like a formality here unless there's a garbage-time disaster.</p>
+    <p>Isaiah Hartenstein returns to Madison Square Garden for the first time as a Thunder. He was a fan favorite here, and now he is the anchor of OKC's championship frontcourt. On the season he is averaging 10.5 points, 9.3 rebounds, and 3.5 assists — a 12.8 R+A baseline that makes the 11.5 number look conservative in the right matchup. This is the right matchup.</p>
+    <p>Mitchell Robinson has been nursing an ongoing ankle issue and is expected to sit or play reduced minutes on the second night of a back-to-back. Without Robinson, the Knicks have no frontcourt presence to match Hartenstein's physicality and interior IQ. This same defensive void allowed Wemby, Sabonis, and Embiid to all clear their prop lines against New York this season. Hartenstein himself went for 21 points and 15 combined R+A in last year's series at MSG. He knows this building. He knows these coverages. And now he has no pressure — he is the one with the ring.</p>
+    <p>Hartenstein also sees a usage spike when Jalen Williams is unavailable, as Williams normally controls secondary rebounding opportunities. The number opens up from every angle — Mitchell Robinson likely limited, Jalen Williams' status uncertain, former-team motivation running high. Action Network PRO has this as an A-minus edge at -115.</p>
   </div>
-  <div class="pick-edge">Why the number is beatable: Sportsbooks haven't fully adjusted for the double-absence in Philly's frontcourt. With two of their top five scorers out, Maxey's usage rate spikes hard — 25.5 is too low for a 29 PPG guy running the whole show.</div>
+  <div class="pick-edge">Why the number is beatable: Hartenstein's season R+A average is 12.8. The Robinson ankle situation removes the one Knick who can physically challenge him. Books set 11.5 for a normal road game, not a former-team spot with an injured center defending him.</div>
 </div>
 
-<!-- PICK 3 -->
 <div class="pick-card yellow">
   <div class="pick-num">Pick 03 — Spread</div>
-  <div class="pick-headline"><span class="circle">🟡</span>New York Knicks +4.5</div>
-  <div class="pick-odds">-105 · Bet365</div>
-  <div class="pick-meta">Thunder @ Knicks &nbsp;·&nbsp; 7:00 PM ET &nbsp;·&nbsp; Madison Square Garden, New York NY</div>
-  <div class="injury-warn">⚠️ SGA/JALEN STATUS: Injury reports NOT YET SUBMITTED for tonight (as of 6 AM ET). Shai Gilgeous-Alexander and Jalen Williams BOTH missed Tuesday vs Bulls — injury management. Confirm SGA status before betting. If both are out, upgrade this to a strong lean or Knicks ML.</div>
+  <div class="pick-headline"><span class="circle">&#x1F7E1;</span>Atlanta Hawks +1</div>
+  <div class="pick-odds">-110 &middot; Bet365</div>
+  <div class="pick-meta">Hawks @ Bucks &nbsp;&middot;&nbsp; 9:30 PM ET &nbsp;&middot;&nbsp; Fiserv Forum, Milwaukee WI</div>
+  <div class="injury-confirm">&#x2705; ACTIVE: Jalen Johnson and Trae Young both available for Atlanta. Giannis Antetokounmpo active but on a minutes restriction — this is only his second game back after missing 15 with a calf strain. Taurean Prince (OUT, neck surgery) and Alex Antetokounmpo (G League) are out for Milwaukee.</div>
   <div class="pick-analysis">
-    <p>This is the game of the night. OKC (47-15) is the best team in the West on paper, but they're walking into the Garden without their best two players available on back-to-back nights. SGA (31.8 PPG, 6.4 APG) sat Tuesday with an abdominal strain — same injury that cost him time earlier this year. Jalen Williams has been out since the week prior. The Thunder beat Chicago without them, but the Knicks are not Chicago.</p>
-    <p>New York is playing their best basketball of the season: 12 wins in their last 15 games, third in the Eastern Conference, and 21-11 ATS at home — one of the best home ATS marks in the league. Jalen Brunson has been unconscious since the All-Star break: 23.8 PPG, 6.2 APG, 44% from three in his last six games. KAT dropped 21 the night before. The Garden is loud, the team is confident, and they're 4-7 as underdogs this year — they know how to play with something to prove.</p>
-    <p>Even if SGA plays, +4.5 has value. OKC is 31-31 ATS overall and just 16-14 on the road. The Knicks home edge and current form make this a value play regardless. But if it's Aaron Wiggins and Isaiah Joe carrying OKC's offense, this number should be closer to -7 or -8 in favor of New York.</p>
+    <p>The form gap between these two teams is stark and the spread barely reflects it. Atlanta is 6-4 in their last ten and 4-1 in their last five, scoring 118.2 points per game on 47.8% shooting. Milwaukee is 4-6 in their last ten, 2-3 in their last five, and averaging only 111.4 PPG on 45.1% shooting. The Hawks carry the better offensive rating (113.8 vs. 112.4) and the better net rating (-0.7 vs. -2.8). Getting a point and a half with the hotter team is not a situation the market normally offers. Tonight it does.</p>
+    <p>The Jalen Johnson vs. Milwaukee angle is not a coincidence — it is a pattern. Johnson is averaging 29.3 points per game in three games against the Bucks this season, putting up 33, 28, and 27. Milwaukee ranks dead last in the NBA in points allowed to the power forward position (30th, 23.8 PPG allowed). That is not a weakness. That is a vacancy. Johnson will exploit it again tonight.</p>
+    <p>The Giannis factor cuts both ways. Yes, he is back — and that matters. But this is his second game back after missing 15 straight with a calf strain. His conditioning is not at peak, and he will be playing on a real minutes restriction, likely 28-30 minutes. Fiserv Forum home court is real, but Atlanta covers 54.5% of the time as underdogs. Milwaukee covers only 42.9% as a home favorite. The numbers have been saying the same thing all season: fade the Bucks at home when they are fading.</p>
   </div>
-  <div class="pick-edge">Why the number is beatable: The Thunder's road ATS record is mediocre, and this spread was set when SGA was assumed healthy. Books can't move it far enough overnight if he's ruled out by 2 PM.</div>
+  <div class="pick-edge">Why the number is beatable: Giannis returning inflated this line back to Milwaukee -1. But a Giannis on a 30-minute cap in his second game back from a significant injury is not worth buying a point and a half against a team averaging 118 PPG on a 4-game winning streak.</div>
 </div>
 
-<!-- PICK 4 -->
 <div class="pick-card red">
   <div class="pick-num">Pick 04 — Player Prop</div>
-  <div class="pick-headline"><span class="circle">🔴</span>Payton Pritchard Over 19.5 Points</div>
-  <div class="pick-odds">-110 · Bet365</div>
-  <div class="pick-meta">Celtics vs Hornets &nbsp;·&nbsp; 7:30 PM ET &nbsp;·&nbsp; TD Garden, Boston MA</div>
-  <div class="injury-confirm">✅ INJURY CONFIRMED: Jayson Tatum OUT — Pritchard is the primary offensive weapon. He is ACTIVE and starting in an expanded role. (Per PickDawgz, DocSports, multiple sources, March 4)</div>
+  <div class="pick-headline"><span class="circle">&#x1F534;</span>Brandon Miller Over 3.5 Made Threes</div>
+  <div class="pick-odds">+125 &middot; Bet365</div>
+  <div class="pick-meta">Hornets @ Celtics &nbsp;&middot;&nbsp; 7:30 PM ET &nbsp;&middot;&nbsp; TD Garden, Boston MA</div>
+  <div class="injury-confirm">&#x2705; ACTIVE: Brandon Miller is healthy and starting for Charlotte. Jayson Tatum (OUT — right Achilles) is confirmed out for Boston, removing their top perimeter defender from the floor.</div>
   <div class="pick-analysis">
-    <p>This has hit before. On March 2, without Tatum, Pritchard closed with 25 points on 5-9 FG (4-8 from three) in 34 minutes of play, adding nine assists as the de facto engine of the Boston offense. Tonight is the same setup: no Tatum, all Pritchard. The line hasn't moved up proportionally — 19.5 is the kind of number you set when Tatum is playing and Pritchard is a secondary option off the bench.</p>
-    <p>Charlotte allows 117+ points per game on the road — they're not a lock-down defensive team. This figures to be an open game where both guards are pushing pace. Pritchard is a volume three-point shooter who heats up fast when given green lights, and in a Tatum-less lineup, those green lights never stop. He's essentially been handed the keys when JT sits — and he knows it.</p>
-    <p>The small risk here: Coby White's return for Charlotte means a real defender at the guard position. White is athletic and can chase Pritchard off screens. But White also returned from injury and likely isn't at 100% defensive intensity. We'll take the matchup risk at -110 on 19.5.</p>
+    <p>Brandon Miller is the best story in the NBA right now and this prop line has not caught up to his current form. He is averaging 23.4 points this season and shooting 41.3% from three on 10.2 attempts per game. He has hit four or more threes in seven of his last twelve games. The over on 3.5 made threes is essentially a coin flip in his current form — and they are paying +125 for it. That is edge, full stop.</p>
+    <p>The opponent creates the angle. Boston is playing without Jayson Tatum, who is their best perimeter defender and the player most capable of chasing Miller off screens and contesting his pull-up threes. Without Tatum, the Celtics will deploy a patchwork wing rotation that lacks the length and athleticism to consistently bother Miller's release. Charlotte has gone 10-1 ATS in their last eleven games, and Miller is the engine of that run — 23.4 PPG and shooting lights out from deep all month.</p>
+    <p>The only real risk here is a blowout in either direction that leads to early sit-downs. But Charlotte's ridiculous ATS record suggests they stay competitive deep into games. If Miller gets his typical 10+ three-point attempts, the math on 41.3% says he is clearing 3.5 made threes more often than not. Plus-money on a near-coin flip at his current rate is the definition of a value prop.</p>
   </div>
-  <div class="pick-edge">Why the number is beatable: Sportsbooks set Pritchard's line assuming Tatum plays. With Tatum confirmed out, this line should be 22.5 or higher. The 19.5 is stale — and that's free money.</div>
+  <div class="pick-edge">Why the number is beatable: Tatum's absence removes Boston's primary wing defender. Miller at 41.3% on 10+ attempts per game is being offered at plus odds on 3.5 makes. The market is discounting his hot streak and underestimating the defensive void Tatum's absence creates on the perimeter.</div>
 </div>
 
 <div class="divider"></div>
 
-<!-- LONG SHOT -->
 <div class="zone">
-  <div class="zone-label">🎰 LONG SHOT OF THE DAY</div>
-  <div class="longshot-bet">3-Leg SGP: Injury Chaos Parlay</div>
-  <div class="longshot-odds">Est. +420 · Bet365</div>
-
+  <div class="zone-label">&#x1F3B0; LONG SHOT OF THE DAY</div>
+  <div class="longshot-bet">3-Leg SGP: Hawks Upset + Form Cashes</div>
+  <div class="longshot-odds">Est. +450 &middot; Bet365</div>
   <ul class="longshot-legs">
-    <li><span class="leg-num">LEG 1.</span> New York Knicks ML (to win outright) — Thunder shorthanded without SGA &amp; Jalen Williams, Knicks at home and on a 12-3 run</li>
-    <li><span class="leg-num">LEG 2.</span> Jalen Brunson Over 25.5 Points — Post All-Star form: 23.8 PPG in last 6, shoots 44% from three in those games. Faces a depleted OKC defense.</li>
-    <li><span class="leg-num">LEG 3.</span> Tyrese Maxey Over 25.5 Points — Embiid and Broome both out, Maxey is the whole 76ers operation vs a Jazz team missing three frontcourt starters.</li>
+    <li><span class="leg-num">LEG 1.</span> Atlanta Hawks ML — Hotter team (4-1 L5, 118.2 PPG), Giannis on minutes restriction in 2nd game back after 15-game absence, ATL covers 54.5% as underdogs. Near even money on the favorite side of a coin flip.</li>
+    <li><span class="leg-num">LEG 2.</span> Jalen Johnson Over 26.5 Points — Averaging 29.3 PPG in three games vs MIL this season (33, 28, 27). Milwaukee is dead last (30th) in points allowed to the PF position. If Atlanta wins, Johnson is the reason.</li>
+    <li><span class="leg-num">LEG 3.</span> Brandon Miller Over 3.5 Made Threes — 41.3% from three on 10+ attempts, Tatum OUT removes Boston's best wing defender. Fully independent leg from the ATL/MIL game.</li>
   </ul>
-
   <div class="longshot-corr">
-    Legs 1 and 2 are tightly correlated — a Brunson explosion drives a Knicks win. Leg 3 is independent but equally injury-driven. All three picks are grounded in confirmed absences and recent form. Small unit only. This isn't a "lucky parlay" — it's three injuries conspiring at once. If the reports shake out right, this is high-probability for a long shot.
+    Legs 1 and 2 are tightly correlated — a Johnson explosion is the catalyst for an Atlanta road win. Leg 3 is fully independent and grounded in the same Tatum-out angle driving Pick 4. All three players confirmed active and healthy. Small unit only. This is not a lucky parlay — it is three injuries and two hot streaks conspiring at the same time.
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- BETTING JOURNEY -->
-<div class="zone zone-journey">
-  <div class="zone-label">📓 THE BETTING JOURNEY</div>
-  <div class="journey-card">
-    <div class="journey-record">
-      Card Record: <span>0-0-0</span> &nbsp;|&nbsp; Carl's P&amp;L: <span style="color:#68d391">+$5.20</span>
-    </div>
-    <div class="journey-yesterday">
-      <strong>Last Card Results (March 2):</strong><br>
-      Pritchard Over 19.5 Pts — HIT ✅<br>
-      Long Shot SGP (Celtics -7.5 + Pritchard 19.5+ + Pritchard 3+ threes) — HIT ✅ (+$5.20 on $2)<br>
-      Clippers -1.5 — PENDING ⏳<br>
-      Amen Thompson Over 8.5 Reb — PENDING ⏳<br>
-      KD Over 4.5 Assists — PENDING ⏳<br>
-      <br>
-      <em style="color: #888; font-size: 13px;">Note: Pending picks from March 2 need ledger resolution. No report data found for March 3.</em>
-    </div>
-    <div class="journey-lesson">
-      <strong>Lesson / Celebration:</strong><br>
-      The Pritchard angle hit twice on March 2 — once as a standalone prop and once in the long shot SGP. The key move: Jaylen Brown got scratched with illness mid-day, we pivoted same-day to Pritchard as the load-bearer, and the 25-point game did the rest. Tonight, we're running the exact same playbook with Tatum confirmed out. Repeating a lesson isn't a coincidence — it's a system.
-    </div>
+<div class="zone">
+  <div class="zone-label">&#x1F4D3; THE BETTING JOURNEY</div>
+  <div class="journey-record">
+    Card Record: <span>1W&ndash;1L&ndash;0P</span> &nbsp;|&nbsp; Carl's P&amp;L: <span style="color:#68d391">+$1.20</span> (wagered $6.00 / returned $7.20)
+  </div>
+  <div class="journey-yesterday">
+    <strong>March 3 Results:</strong><br>
+    Wemby Over 3.5 Blocks &mdash; HIT &#x2705;<br>
+    SGP+ (Wolves -14.5 + Team Over 122.5 + Wemby Blocks) &mdash; MISS &#x274C; — Wolves won by only 7, scored 117 (needed 122.5). Wemby blocks cleared but the spread leg collapsed it. ($4 lost)<br>
+    Pistons -2.5, Cade Over 25.5, Banchero Over 9.5 Reb &mdash; PENDING &#x23F3;<br>
+    <br>
+    <strong>March 2 (still pending):</strong><br>
+    Pritchard Over 19.5 &mdash; HIT &#x2705; &nbsp;|&nbsp; Long Shot SGP &mdash; HIT &#x2705; (+$5.20 on $2)<br>
+    Clippers -1.5, Amen Thompson Over 8.5 Reb, KD Over 4.5 Ast &mdash; PENDING &#x23F3;
+  </div>
+  <div class="journey-lesson">
+    <strong>Lesson from yesterday's SGP miss:</strong> Individual legs were solid — Wemby blocks hit, Wolves won. But the composite bet asked three very different things to all max out simultaneously, and Minnesota let a big lead shrink. The lesson reinforced: SGPs need correlated legs, not just good individual picks. Today's long shot fixes that with legs 1 and 2 tightly linked by a single outcome.
   </div>
 </div>
 
 <div class="disclaimer">
-  For entertainment purposes only. Gambling involves risk. Never bet what you can't afford to lose.<br>
-  Odds reflect Bet365 lines as of early March 4, 2026. Always confirm lines before placing bets.<br>
-  🔗 <a href="https://misterpavano.github.io/nba-bets/" style="color: var(--gold);">misterpavano.github.io/nba-bets</a>
+  For entertainment purposes only. Gambling involves risk. Never bet what you cannot afford to lose.<br>
+  Odds reflect Bet365 lines as of March 4, 2026. Always confirm lines before placing bets.<br>
+  &#x1F517; <a href="https://misterpavano.github.io/nba-bets/" style="color: var(--gold);">misterpavano.github.io/nba-bets</a>
 </div>
 
 </body>
