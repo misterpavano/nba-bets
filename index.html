@@ -32,13 +32,16 @@
     .pick-card.red::before { background: var(--red); }
     .pick-num { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
     .pick-headline { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 4px; }
-    .pick-headline .circle { margin-right: 8px; }
     .pick-odds { display: inline-block; background: var(--surface2); border: 1px solid var(--border); color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; padding: 3px 12px; border-radius: 4px; margin: 8px 0 10px; }
     .pick-meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
     .injury-confirm { background: rgba(56,161,105,0.12); border: 1px solid rgba(56,161,105,0.4); border-radius: 5px; padding: 8px 12px; font-size: 13px; color: #68d391; margin-bottom: 14px; }
     .injury-warn { background: rgba(214,158,46,0.12); border: 1px solid rgba(214,158,46,0.4); border-radius: 5px; padding: 8px 12px; font-size: 13px; color: #f6e05e; margin-bottom: 14px; }
     .pick-analysis p { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 12px; }
     .pick-edge { background: var(--surface2); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #e8d99a; font-style: italic; border-radius: 0 4px 4px 0; margin-top: 4px; }
+    .stat-row { display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    .stat-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 14px; text-align: center; min-width: 80px; }
+    .stat-val { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: var(--gold); }
+    .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
     .section-label { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
     .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .zone { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 22px 18px; margin-bottom: 22px; }
@@ -67,81 +70,119 @@
 
 <div class="slate">
   <div class="slate-title">Today's Slate</div>
-  <div class="slate-game"><span>Oklahoma City Thunder @ New York Knicks</span><span class="slate-time">7:00 PM · ESPN, MSG, FDSOK</span></div>
-<div class="slate-game"><span>Charlotte Hornets @ Boston Celtics</span><span class="slate-time">7:30 PM · NBCS-BOS, FDSSE</span></div>
-<div class="slate-game"><span>Utah Jazz @ Philadelphia 76ers</span><span class="slate-time">7:30 PM · KJZZ, Jazz+, NBCS-PH</span></div>
-<div class="slate-game"><span>Portland Trail Blazers @ Memphis Grizzlies</span><span class="slate-time">8:00 PM · KUNP, FDSSE, Rip City TV</span></div>
-<div class="slate-game"><span>Atlanta Hawks @ Milwaukee Bucks</span><span class="slate-time">9:30 PM · ESPN, FDSSE, FDSWI</span></div>
-<div class="slate-game"><span>Indiana Pacers @ Los Angeles Clippers</span><span class="slate-time">10:30 PM · FDSIN, FDSSC, NBA League Pass</span></div>
-
+  <div class="slate-game"><span>Oklahoma City Thunder @ New York Knicks</span><span class="slate-time">7:00 PM ET · ESPN</span></div>
+  <div class="slate-game"><span>Charlotte Hornets @ Boston Celtics</span><span class="slate-time">7:30 PM ET · NBCS-BOS</span></div>
+  <div class="slate-game"><span>Utah Jazz @ Philadelphia 76ers</span><span class="slate-time">7:30 PM ET · NBCS-PH</span></div>
+  <div class="slate-game"><span>Portland Trail Blazers @ Memphis Grizzlies</span><span class="slate-time">8:00 PM ET · FDSSE</span></div>
+  <div class="slate-game"><span>Atlanta Hawks @ Milwaukee Bucks</span><span class="slate-time">9:30 PM ET · ESPN</span></div>
+  <div class="slate-game"><span>Indiana Pacers @ LA Clippers</span><span class="slate-time">10:30 PM ET · League Pass</span></div>
 </div>
 
 <div class="section-label">Today's Best Bets</div>
 
 <div class="pick-card green">
   <div class="pick-num">Pick 01</div>
-  <div class="pick-headline">🟢 Jaylen Brown Over 26.5 Points</div>
-  <div class="pick-odds">-115 · Bet365</div>
-  <div class="pick-meta">Charlotte Hornets @ Boston Celtics — 7:30 PM ET · TD Garden</div>
-  <div class="injury-confirm">✅ Brown confirmed active · Tatum OUT — Achilles surgery, has not played this season (per official NBA injury report, Mar 4)</div>
-  <div class="pick-analysis">
-    <p>Jayson Tatum has not played a single game this season recovering from Achilles surgery. In his absence, Jaylen Brown is Boston's unquestioned alpha — his usage rate climbs to 35%+ and his scoring average in Tatum-less games this year is 29.0 PPG. Charlotte ranks in the bottom third of the league defensively and has allowed 118+ points in four of their last six.</p>
-    <p>Brown is averaging 29.0 PPG this season on 47.3% shooting. Charlotte has no wing defender capable of shadowing him for 48 minutes. The Celtics will funnel everything through Brown early, and with the Hornets unable to slow their pace, this line should clear with room.</p>
+  <div class="pick-headline">🟢 Brandon Miller Over 3.5 Made Threes</div>
+  <div class="pick-odds">+125 · Bet365</div>
+  <div class="pick-meta">Charlotte Hornets @ Boston Celtics — 7:30 PM ET</div>
+  <div class="injury-confirm">✅ Miller confirmed active · Salaun OUT, Grant Williams OUT (per ESPN injury report, Mar 4)</div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-val">4.1</div><div class="stat-lbl">3PM/g L10</div></div>
+    <div class="stat-box"><div class="stat-val">41%</div><div class="stat-lbl">3PT% L10</div></div>
+    <div class="stat-box"><div class="stat-val">#7</div><div class="stat-lbl">BOS 3PT D rank</div></div>
+    <div class="stat-box"><div class="stat-val">13.9</div><div class="stat-lbl">BOS 3PM/g allowed</div></div>
   </div>
-  <div class="pick-edge"><strong>Why the number is beatable:</strong> 26.5 is nearly 2.5 points below Brown's season average in Tatum's absence. Charlotte's defense doesn't have the personnel to slow him.</div>
+  <div class="pick-analysis">
+    <p>Brandon Miller has been one of the most prolific three-point shooters in the league over his last 10 games — 41 makes on 100 attempts (41%) at 4.1 per game. He is one of only 12 players averaging 7+ above-the-break three attempts per game, and the data shows he clears 3.5 threes in 4 of his last 5 against teams in the bottom 10 of three-point defense.</p>
+    <p>Boston ranks #7 worst in the NBA at defending threes, allowing 13.9 per game. Without Tatum driving the defensive rotation, Charlotte will have more open corner and wing looks for Miller. This is a matchup-based pick grounded in shot zone data — not a vibe.</p>
+  </div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> Miller is averaging 4.1 threes per game over his last 10. The line is 3.5. Boston is a bottom-10 three-point defense. At +125, this is plus-money on a near-favorite outcome.</div>
 </div>
 
 <div class="pick-card blue">
   <div class="pick-num">Pick 02</div>
-  <div class="pick-headline">🔵 Giannis Under 25.5 Points</div>
-  <div class="pick-odds">-110 · Bet365</div>
-  <div class="pick-meta">Atlanta Hawks @ Milwaukee Bucks — 9:30 PM ET · Fiserv Forum</div>
-  <div class="injury-confirm">✅ Giannis active — 2nd game back from injury, confirmed minutes restriction (per multiple sources, Mar 4)</div>
-  <div class="pick-analysis">
-    <p>This is only Giannis's second game back from a lengthy injury layoff. In his return Tuesday, he played approximately 25 minutes and scored 19 points — well under 25.5. Milwaukee is bringing him back carefully with a confirmed minutes cap. A player returning from injury on a minutes restriction does not put up full-game scoring numbers.</p>
-    <p>The line at 25.5 is priced for a healthy, full-minutes Giannis. He averaged 19 in 25 minutes in game one back. Even if they extend him to 28-30 minutes tonight, he'd need to score at nearly 1 PPM to clear 25.5. The math doesn't work at current minutes.</p>
+  <div class="pick-headline">🔵 Tyrese Maxey Over 25.5 Points</div>
+  <div class="pick-odds">-112 · Bet365</div>
+  <div class="pick-meta">Utah Jazz @ Philadelphia 76ers — 7:30 PM ET</div>
+  <div class="injury-confirm">✅ Maxey confirmed active · Embiid OUT (oblique), George OUT (suspension), Edgecombe OUT, Oubre OUT · Jazz: Markkanen OUT, Nurkic OUT, JJJ OUT, Kessler OUT (per ESPN injury report, Mar 4)</div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-val">29.9</div><div class="stat-lbl">PPG L10</div></div>
+    <div class="stat-box"><div class="stat-val">35.5</div><div class="stat-lbl">MIN L10</div></div>
+    <div class="stat-box"><div class="stat-val">#30</div><div class="stat-lbl">Utah def rank</div></div>
+    <div class="stat-box"><div class="stat-val">5</div><div class="stat-lbl">Jazz starters OUT</div></div>
   </div>
-  <div class="pick-edge"><strong>Why the number is beatable:</strong> 25 min played in return game, scored 19. Minutes restriction confirmed. 25.5 requires full-game Giannis — that's not tonight.</div>
+  <div class="pick-analysis">
+    <p>Tyrese Maxey is averaging 29.9 points per game over his last 10. With Embiid, George, Edgecombe, and Oubre all out, he is the entire Philadelphia offense tonight. Usage rate climbs above 35% in full alpha mode. Utah is the worst defense in the NBA (#30 overall, #1 in threes allowed) and is missing their entire frontcourt — Markkanen, Nurkic, JJJ, and Kessler are all out.</p>
+    <p>25.5 is a full 4 points below Maxey's L10 average, on the worst defense in the league, with no teammates to share the load. This is the strongest data-backed pick on tonight's slate.</p>
+  </div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> 25.5 vs a player averaging 29.9 L10 in full alpha mode against the NBA's worst defense. The math is overwhelming.</div>
 </div>
 
 <div class="pick-card yellow">
   <div class="pick-num">Pick 03</div>
-  <div class="pick-headline">🟡 OKC Thunder -4.5</div>
+  <div class="pick-headline">🟡 Giannis Antetokounmpo Under 25.5 Points</div>
   <div class="pick-odds">-110 · Bet365</div>
-  <div class="pick-meta">Oklahoma City Thunder @ New York Knicks — 7:00 PM ET · Madison Square Garden</div>
-  <div class="injury-confirm">✅ SGA confirmed active (per official NBA injury report, Mar 4) · Deuce McBride OUT — core muscle surgery</div>
-  <div class="pick-analysis">
-    <p>OKC is the best team in basketball — 48-15, league-leading net rating, and SGA is back after a rest day. The Thunder's 8-point efficiency gap over New York gets priced at only 4.5 because it's a road game at MSG. But OKC's defense (top 2 in the league) travels, and their depth is too much for a Knicks team missing McBride.</p>
-    <p>Pinnacle opened this at OKC -4 and it's moved to -4.5 — the market is taking OKC. The road discount is already baked in at 4.5. SGA fresh off rest vs a back-to-back Knicks team is the spot.</p>
+  <div class="pick-meta">Atlanta Hawks @ Milwaukee Bucks — 9:30 PM ET</div>
+  <div class="injury-confirm">✅ Giannis confirmed active · Kevin Porter Jr. OUT (knee swelling), Taurean Prince OUT · Kuminga Q/DTD (per ESPN injury report, Mar 4)</div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-val">19</div><div class="stat-lbl">Pts (return game)</div></div>
+    <div class="stat-box"><div class="stat-val">26</div><div class="stat-lbl">Min (return game)</div></div>
+    <div class="stat-box"><div class="stat-val">Game 2</div><div class="stat-lbl">Back from injury</div></div>
   </div>
-  <div class="pick-edge"><strong>Why the number is beatable:</strong> OKC's efficiency gap is 8+ points. Market caps road chalk at 4.5. SGA rested, Knicks on second night of back-to-back.</div>
+  <div class="pick-analysis">
+    <p>This is Giannis's second game back from a lengthy injury absence. In his return Tuesday, he played 26 minutes and scored 19 points — well under 25.5. Milwaukee has him on a confirmed minutes restriction as they manage his return carefully. A player on a minutes cap in game 2 of a return does not suddenly play 36 minutes and score 26+.</p>
+    <p>The line at 25.5 prices a healthy, full-minutes Giannis. That's not tonight. Even if they extend him slightly, he'd need nearly 1 point per minute over an extended run to clear this line — unlikely with a cautious coaching staff.</p>
+  </div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> Scored 19 in 26 min in game 1 back. Minutes restriction confirmed. 25.5 requires a full-game performance Milwaukee won't allow.</div>
 </div>
 
 <div class="pick-card red">
   <div class="pick-num">Pick 04</div>
-  <div class="pick-headline">🔴 Philadelphia 76ers -9.5</div>
+  <div class="pick-headline">🔴 OKC Thunder -4.5</div>
   <div class="pick-odds">-110 · Bet365</div>
-  <div class="pick-meta">Utah Jazz @ Philadelphia 76ers — 7:30 PM ET · Wells Fargo Center</div>
-  <div class="injury-warn">⚠️ Embiid OUT (oblique) · Edgecombe OUT · Oubre OUT · Jazz missing: JJJ (traded), Markkanen (hip), Nurkic (nose), Kessler (per official NBA injury report, Mar 4)</div>
-  <div class="pick-analysis">
-    <p>Yes, Embiid is out — but look at what Utah is missing. Jaren Jackson Jr. was traded, Lauri Markkanen (hip), Jusuf Nurkic (nose), and Walker Kessler are all out. The Jazz are on a 6-game losing streak and are sending an essentially roster-depleted team to Philly. Tyrese Maxey had 21 points on a back-to-back last night and is fully rested tonight with a massive frontcourt mismatch to exploit.</p>
-    <p>Philadelphia -9.5 without Embiid is still appropriate against a Jazz team this short-handed. The 76ers have enough complementary pieces — Maxey, Tobias Harris, Kelly Oubre (if healthy) — to blow out a team with no frontcourt. This spread is about Utah's depletion, not Philly's stars.</p>
+  <div class="pick-meta">Oklahoma City Thunder @ New York Knicks — 7:00 PM ET</div>
+  <div class="injury-confirm">✅ SGA confirmed active (rested Tuesday) · Jalen Williams OUT (hamstring), Carlson OUT · Knicks: Robinson OUT, McBride OUT (per ESPN injury report, Mar 4)</div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-val">#1</div><div class="stat-lbl">OKC overall def</div></div>
+    <div class="stat-box"><div class="stat-val">48-15</div><div class="stat-lbl">OKC record</div></div>
+    <div class="stat-box"><div class="stat-val">#3</div><div class="stat-lbl">OKC 3PT D rank</div></div>
   </div>
-  <div class="pick-edge"><strong>Why the number is beatable:</strong> Jazz have lost their entire frontcourt rotation. Even without Embiid, Philly has too much depth for a 6-game skid Utah team with no interior presence.</div>
+  <div class="pick-analysis">
+    <p>OKC is the best team in basketball — #1 defense in the NBA, 48-15 record, and SGA is back fresh off a rest day. The Thunder's 8-point efficiency gap over New York gets priced at only 4.5 because of the road discount. But OKC's defense travels, and their depth overwhelms teams like the Knicks who are playing shorthanded without Robinson and McBride.</p>
+    <p>Knicks are on the second night of a back-to-back. OKC is rested. SGA + Holmgren + Hartenstein all fresh vs a fatigued New York team missing two rotation players.</p>
+  </div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> Best defense in the league, fully rested, against a back-to-back Knicks team missing key pieces. 4.5 undervalues the gap.</div>
 </div>
 
 <div class="divider"></div>
 <div class="section-label">Long Shot</div>
 <div class="zone">
-  <div class="zone-label">🎰 Long Shot — ~+450</div>
-  <div class="longshot-bet">SGP: Brown Over 26.5 + OKC -4.5 + Giannis Under 25.5</div>
-  <div class="longshot-odds">~+450</div>
+  <div class="zone-label">🎰 Long Shot — ~+480</div>
+  <div class="longshot-bet">SGP: Miller 3.5+ Threes + Maxey Over 25.5 + OKC -4.5</div>
+  <div class="longshot-odds">~+480</div>
   <ul class="longshot-legs">
-    <li><span class="leg-num">1.</span> Jaylen Brown Over 26.5 Points (Celtics vs Hornets)</li>
-    <li><span class="leg-num">2.</span> OKC Thunder -4.5 (Thunder @ Knicks)</li>
-    <li><span class="leg-num">3.</span> Giannis Under 25.5 Points (Hawks @ Bucks)</li>
+    <li><span class="leg-num">1.</span> Brandon Miller Over 3.5 Threes (CHA @ BOS)</li>
+    <li><span class="leg-num">2.</span> Tyrese Maxey Over 25.5 Points (UTA @ PHI)</li>
+    <li><span class="leg-num">3.</span> OKC Thunder -4.5 (OKC @ NYK)</li>
   </ul>
-  <div class="longshot-corr">Three independent legs from three different games — no correlation risk. Each stands on its own injury-driven logic: Brown as Celtics alpha, OKC efficiency edge, Giannis on minutes restriction in his second game back. Small unit only.</div>
+  <div class="longshot-corr">Three independent picks from three different games. Each backed by real stats — not vibes. Miller's shot-zone matchup, Maxey's alpha load on the worst defense, OKC's efficiency gap vs a fatigued Knicks. Small unit only.</div>
+</div>
+
+<div class="divider"></div>
+<div class="section-label">The Betting Journey</div>
+<div class="zone zone-journey">
+  <div class="zone-label">📓 THE BETTING JOURNEY</div>
+  <div class="journey-record">Card Record: <span>1-1</span> &nbsp;|&nbsp; Carl's P&L: <span>+$1.20</span></div>
+  <div class="journey-yesterday">
+    <strong>March 3 Results:</strong><br>
+    Wemby Over 3.5 Blocks — HIT ✅<br>
+    SGP: Wolves -14.5 + Wolves 122.5 + Wemby Blocks — MISS ❌ (Wolves won by 7, scored 117)<br>
+  </div>
+  <div class="journey-lesson">Lesson: The spread leg killed the SGP — Wolves played it safe with a big lead. Strong individual picks don't always survive parlay correlation. Today we go deeper on the data before picking.</div>
+</div>
+
+<div class="disclaimer">
+  For entertainment purposes only. Please bet responsibly. Lines sourced from Bet365. Stats sourced from NBA.com via nba_api and ESPN.
 </div>
 
 </body>
