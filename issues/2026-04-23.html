@@ -1,61 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA Best Bets — April 23, 2026</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #0a0a0a; color: #e0e0e0; }
-        h1 { color: #ff6b35; border-bottom: 2px solid #ff6b35; padding-bottom: 10px; }
-        .pick { background: #1a1a1a; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #ff6b35; }
-        .pick.green { border-left-color: #00c853; }
-        .pick.blue { border-left-color: #2962ff; }
-        .pick.red { border-left-color: #ff1744; }
-        .pavano { background: #2d1b4e; padding: 15px; margin: 15px 0; border-radius: 8px; }
-        .games { margin-top: 20px; }
-        .game { padding: 10px; border-bottom: 1px solid #333; }
-        a { color: #ff6b35; }
-        .record { color: #888; font-size: 0.9em; }
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1a1a1a;
+            --accent-orange: #ff6b35;
+            --accent-green: #00c853;
+            --accent-blue: #2962ff;
+            --text-primary: #f5f5f5;
+            --text-secondary: #888;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 2px solid var(--accent-orange);
+        }
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        header .meta {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+        .slate-info {
+            background: var(--bg-secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+        .slate-info h2 {
+            color: var(--accent-orange);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .game {
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+        }
+        .game:last-child { border-bottom: none; }
+        .picks-section { margin: 30px 0; }
+        .picks-section h2 {
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        .pick {
+            background: var(--bg-card);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-orange);
+        }
+        .pick-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .pick-number {
+            background: var(--accent-orange);
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+        }
+        .pick-emoji { font-size: 1.2em; }
+        .pick-text { font-weight: 600; font-size: 1.1em; }
+        .pick-narrative { color: var(--text-secondary); margin-top: 8px; }
+        .pavano-bet {
+            background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #7c4dff;
+        }
+        .pavano-bet h3 {
+            color: #7c4dff;
+            margin-bottom: 10px;
+        }
+        .pavano-bet .record {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .pavano-bet .bet-text {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .pavano-bet .bet-reason {
+            color: var(--text-secondary);
+        }
+        .longshot {
+            background: var(--bg-card);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .longshot h3 { color: var(--accent-orange); margin-bottom: 10px; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            border-top: 1px solid #333;
+            margin-top: 30px;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            .container { padding: 15px; }
+        }
     </style>
 </head>
 <body>
-    <h1>🏀 NBA Best Bets — April 23, 2026</h1>
-    <p><a href="https://misterpavano.github.io/nba-bets/">https://misterpavano.github.io/nba-bets/</a></p>
+    <header>
+        <h1>🏀 NBA Best Bets</h1>
+        <p class="meta">April 23, 2026 · 3-game slate</p>
+    </header>
     
-    <div class="pick green">
-        <strong>💪 Jarrett Allen Over 8.5 Rebounds (-110)</strong>
-        <p>8.8 REB/g, and TOR is weak against Center.</p>
-    </div>
-    
-    <div class="pick blue">
-        <strong>📈 Over 232.5 DEN@MIN (-110)</strong>
-        <p>Both teams play moderate pace (100.5), and at least one has porous defense (#21). Points should flow.</p>
-    </div>
-    
-    <div class="pavano">
-        <strong>🎯 Pavano's Bet [2-1] ($107.40)</strong>
-        <p>Jarrett Allen Over 8.5 Rebounds (-110)</p>
-    </div>
-    
-    <h3>🎰 Long Shot</h3>
-    <p>Jarrett Allen Over 8.5 REB / Over 232.5 DEN@MIN (+600)</p>
-    
-    <div class="games">
-        <h3>Today's Games</h3>
+    <div class="container">
+        <div class="slate-info">
+            <h2>Today's Slate</h2>
+            
         <div class="game">
             <strong>New York Knicks @ Atlanta Hawks</strong> — 7:00 PM ET<br>
-            Line: NY -1.5 | Total: 214.5
+            Spread: NY -1.5 | Total: 214.5
         </div>
+        
         <div class="game">
             <strong>Cleveland Cavaliers @ Toronto Raptors</strong> — 8:00 PM ET<br>
-            Line: CLE -2.5 | Total: 221.5
+            Spread: CLE -2.5 | Total: 221.5
         </div>
+        
         <div class="game">
             <strong>Denver Nuggets @ Minnesota Timberwolves</strong> — 9:30 PM ET<br>
-            Line: DEN -2.5 | Total: 232.5
+            Spread: DEN -2.5 | Total: 232.5
         </div>
+        
+        </div>
+        
+        <div class="picks-section">
+            <h2>Today's Best Bets</h2>
+            
+        <div class="pick" style="border-left-color: #2962ff">
+            <div class="pick-header">
+                <span class="pick-number">Pick 01</span>
+                <span class="pick-emoji">💪</span>
+                <span class="pick-text">Nikola Jokić Over 14.5 Rebounds (-110)</span>
+            </div>
+            <p class="pick-narrative">Nikola Jokić is a rebounding machine (14.6/g). The line is too low.</p>
+        </div>
+        
+        <div class="pick" style="border-left-color: #ffc107">
+            <div class="pick-header">
+                <span class="pick-number">Pick 02</span>
+                <span class="pick-emoji">📈</span>
+                <span class="pick-text">Over 232.5 DEN@MIN (-110)</span>
+            </div>
+            <p class="pick-narrative">Both teams play moderate pace (100.5), and at least one has porous defense (#21). Points should flow.</p>
+        </div>
+        
+        </div>
+        
+        
+        <div class="longshot">
+            <h3>🎰 Long Shot — +600</h3>
+            <p>SGP: Nikola Jokić 14.5 + DEN@MIN Over 232.5</p>
+        </div>
+        
+        
+        <div class="pavano-bet">
+            <h3>🎯 PAVANO'S BET</h3>
+            <p class="record">2W-1L (66%) · Bankroll: $107.40</p>
+            <p class="bet-text">Nikola Jokić Over 14.5 Rebounds (-110)</p>
+            <p class="bet-reason">Nikola Jokić is a rebounding machine (14.6/g). The line is too low.</p>
+        </div>
+        
     </div>
     
-    <p class="record">Generated by Pavano</p>
+    <footer>
+        <p>Generated by Pavano</p>
+    </footer>
 </body>
 </html>
