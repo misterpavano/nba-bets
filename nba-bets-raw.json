@@ -3,7 +3,7 @@
     "date": "April 24, 2026",
     "date_iso": "2026-04-24",
     "season": "2025-26",
-    "generated_at_utc": "2026-04-24T21:33:45.608252+00:00",
+    "generated_at_utc": "2026-04-24T21:19:30.265323+00:00",
     "sources": [
       "ESPN scoreboard",
       "ESPN injuries",
@@ -41,7 +41,7 @@
       "time_et": "8:00 PM ET",
       "time_utc": "2026-04-25T00:00:00+00:00",
       "tv": "Prime Video",
-      "spread": "HOU -9.5",
+      "spread": "HOU -8.5",
       "over_under": 206.5,
       "home_ml": null,
       "away_ml": null,
@@ -3039,44 +3039,44 @@
   },
   "def_vs_position": {
     "ATL": {
-      "guard_score": -0.002,
+      "guard_score": -0.004,
       "forward_score": -0.002,
-      "center_score": 0.007,
+      "center_score": 0.004,
       "most_vulnerable": [
         "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "BKN": {
-      "guard_score": 0.005,
+      "guard_score": 0.017,
       "forward_score": 0.005,
-      "center_score": 0.024,
+      "center_score": 0.013,
       "most_vulnerable": [
-        "Center",
-        "Guard"
+        "Guard",
+        "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "BOS": {
-      "guard_score": -0.001,
+      "guard_score": -0.002,
       "forward_score": -0.001,
-      "center_score": -0.042,
+      "center_score": -0.021,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "CHA": {
       "guard_score": -0.002,
       "forward_score": -0.002,
-      "center_score": -0.012,
+      "center_score": -0.006,
       "most_vulnerable": [
         "Guard"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "CHI": {
-      "guard_score": 0.005,
+      "guard_score": 0.01,
       "forward_score": 0.005,
       "center_score": 0.001,
       "most_vulnerable": [
@@ -3086,9 +3086,9 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "CLE": {
-      "guard_score": 0.005,
+      "guard_score": 0.011,
       "forward_score": 0.005,
-      "center_score": -0.02,
+      "center_score": -0.01,
       "most_vulnerable": [
         "Guard",
         "Forward"
@@ -3096,65 +3096,65 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "DAL": {
-      "guard_score": -0.003,
+      "guard_score": -0.007,
       "forward_score": -0.003,
       "center_score": -0.007,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "DEN": {
-      "guard_score": -0.005,
+      "guard_score": -0.009,
       "forward_score": -0.005,
-      "center_score": 0.024,
+      "center_score": 0.012,
       "most_vulnerable": [
         "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "DET": {
-      "guard_score": -0.007,
+      "guard_score": -0.015,
       "forward_score": -0.007,
-      "center_score": -0.04,
+      "center_score": -0.021,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "GSW": {
       "guard_score": 0.003,
       "forward_score": 0.003,
-      "center_score": 0.005,
+      "center_score": 0.002,
       "most_vulnerable": [
-        "Center",
-        "Guard"
+        "Guard",
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "HOU": {
-      "guard_score": -0.006,
+      "guard_score": -0.01,
       "forward_score": -0.006,
-      "center_score": -0.014,
+      "center_score": -0.006,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "IND": {
-      "guard_score": 0.001,
+      "guard_score": -0.002,
       "forward_score": 0.001,
-      "center_score": 0.007,
+      "center_score": 0.003,
       "most_vulnerable": [
         "Center",
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "LAC": {
-      "guard_score": 0.002,
+      "guard_score": 0.005,
       "forward_score": 0.002,
-      "center_score": -0.006,
+      "center_score": -0.003,
       "most_vulnerable": [
         "Guard",
         "Forward"
@@ -3162,19 +3162,19 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "LAL": {
-      "guard_score": 0.001,
+      "guard_score": -0.003,
       "forward_score": 0.001,
-      "center_score": 0.038,
+      "center_score": 0.021,
       "most_vulnerable": [
         "Center",
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "MEM": {
-      "guard_score": 0.005,
+      "guard_score": 0.008,
       "forward_score": 0.005,
-      "center_score": 0.018,
+      "center_score": 0.009,
       "most_vulnerable": [
         "Center",
         "Guard"
@@ -3182,37 +3182,37 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "MIA": {
-      "guard_score": -0.003,
+      "guard_score": -0.004,
       "forward_score": -0.003,
-      "center_score": 0.001,
+      "center_score": 0.003,
       "most_vulnerable": [
         "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "MIL": {
-      "guard_score": 0.009,
+      "guard_score": 0.017,
       "forward_score": 0.009,
-      "center_score": 0.011,
+      "center_score": 0.006,
       "most_vulnerable": [
-        "Center",
-        "Guard"
+        "Guard",
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "MIN": {
-      "guard_score": -0.002,
+      "guard_score": -0.003,
       "forward_score": -0.002,
-      "center_score": -0.029,
+      "center_score": -0.017,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "NOP": {
-      "guard_score": -0.005,
+      "guard_score": -0.009,
       "forward_score": -0.005,
-      "center_score": 0.019,
+      "center_score": 0.008,
       "most_vulnerable": [
         "Center"
       ],
@@ -3229,9 +3229,9 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "OKC": {
-      "guard_score": 0.003,
+      "guard_score": 0.007,
       "forward_score": 0.003,
-      "center_score": -0.058,
+      "center_score": -0.029,
       "most_vulnerable": [
         "Guard",
         "Forward"
@@ -3239,7 +3239,7 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "ORL": {
-      "guard_score": -0.003,
+      "guard_score": -0.006,
       "forward_score": -0.003,
       "center_score": 0.004,
       "most_vulnerable": [
@@ -3248,16 +3248,16 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "PHI": {
-      "guard_score": -0.005,
+      "guard_score": -0.009,
       "forward_score": -0.005,
-      "center_score": 0.005,
+      "center_score": 0.001,
       "most_vulnerable": [
         "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "PHX": {
-      "guard_score": -0.004,
+      "guard_score": -0.01,
       "forward_score": -0.004,
       "center_score": -0.002,
       "most_vulnerable": [
@@ -3266,46 +3266,46 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "POR": {
-      "guard_score": -0.001,
+      "guard_score": -0.002,
       "forward_score": -0.001,
-      "center_score": -0.01,
+      "center_score": -0.005,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "SAC": {
-      "guard_score": 0.007,
+      "guard_score": 0.017,
       "forward_score": 0.007,
-      "center_score": 0.021,
+      "center_score": 0.011,
       "most_vulnerable": [
-        "Center",
-        "Guard"
+        "Guard",
+        "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "SAS": {
-      "guard_score": -0.004,
+      "guard_score": -0.007,
       "forward_score": -0.004,
-      "center_score": -0.031,
+      "center_score": -0.013,
       "most_vulnerable": [
-        "Guard"
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "TOR": {
-      "guard_score": -0.005,
+      "guard_score": -0.01,
       "forward_score": -0.005,
-      "center_score": 0.009,
+      "center_score": 0.002,
       "most_vulnerable": [
         "Center"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "UTA": {
-      "guard_score": 0.007,
+      "guard_score": 0.013,
       "forward_score": 0.007,
-      "center_score": 0.047,
+      "center_score": 0.026,
       "most_vulnerable": [
         "Center",
         "Guard"
@@ -3313,12 +3313,12 @@
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     },
     "WAS": {
-      "guard_score": 0.005,
+      "guard_score": 0.009,
       "forward_score": 0.005,
-      "center_score": 0.013,
+      "center_score": 0.004,
       "most_vulnerable": [
-        "Center",
-        "Guard"
+        "Guard",
+        "Forward"
       ],
       "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
     }
@@ -4157,7 +4157,12 @@
           "ast": 6.9,
           "fg_pct": 0.482
         },
-        "away_split": null,
+        "away_split": {
+          "pts": 23.3,
+          "reb": 6.8,
+          "ast": 6.5,
+          "fg_pct": 0.443
+        },
         "projected_pts": 245.0,
         "projected_reb": 64.0,
         "projected_ast": 63.0,
@@ -4310,8 +4315,18 @@
         "ft_pct": 0.877,
         "usg_pct": 0.342,
         "ts_pct": 0.667,
-        "home_split": null,
-        "away_split": null,
+        "home_split": {
+          "pts": 26.4,
+          "reb": 11.8,
+          "ast": 3.3,
+          "fg_pct": 0.528
+        },
+        "away_split": {
+          "pts": 23.6,
+          "reb": 11.3,
+          "ast": 3.0,
+          "fg_pct": 0.493
+        },
         "projected_pts": 215.0,
         "projected_reb": 100.0,
         "projected_ast": 29.0,
@@ -5324,7 +5339,12 @@
             "ast": 6.9,
             "fg_pct": 0.482
           },
-          "away_split": null,
+          "away_split": {
+            "pts": 23.3,
+            "reb": 6.8,
+            "ast": 6.5,
+            "fg_pct": 0.443
+          },
           "projected_pts": 245.0,
           "projected_reb": 64.0,
           "projected_ast": 63.0,
@@ -5479,8 +5499,18 @@
           "ft_pct": 0.877,
           "usg_pct": 0.342,
           "ts_pct": 0.667,
-          "home_split": null,
-          "away_split": null,
+          "home_split": {
+            "pts": 26.4,
+            "reb": 11.8,
+            "ast": 3.3,
+            "fg_pct": 0.528
+          },
+          "away_split": {
+            "pts": 23.6,
+            "reb": 11.3,
+            "ast": 3.0,
+            "fg_pct": 0.493
+          },
           "projected_pts": 215.0,
           "projected_reb": 100.0,
           "projected_ast": 29.0,
@@ -5695,18 +5725,18 @@
       },
       "def_vs_position": {
         "away_defense": {
-          "guard_score": -0.001,
+          "guard_score": -0.002,
           "forward_score": -0.001,
-          "center_score": -0.042,
+          "center_score": -0.021,
           "most_vulnerable": [
-            "Guard"
+            "Forward"
           ],
           "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
         },
         "home_defense": {
-          "guard_score": -0.005,
+          "guard_score": -0.009,
           "forward_score": -0.005,
-          "center_score": 0.005,
+          "center_score": 0.001,
           "most_vulnerable": [
             "Center"
           ],
@@ -5989,7 +6019,7 @@
       "home": "Houston Rockets",
       "away_abbr": "LAL",
       "home_abbr": "HOU",
-      "spread": "HOU -9.5",
+      "spread": "HOU -8.5",
       "over_under": 206.5,
       "home_ml": null,
       "away_ml": null,
@@ -6023,21 +6053,21 @@
       },
       "def_vs_position": {
         "away_defense": {
-          "guard_score": 0.001,
+          "guard_score": -0.003,
           "forward_score": 0.001,
-          "center_score": 0.038,
+          "center_score": 0.021,
           "most_vulnerable": [
             "Center",
-            "Guard"
+            "Forward"
           ],
           "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
         },
         "home_defense": {
-          "guard_score": -0.006,
+          "guard_score": -0.01,
           "forward_score": -0.006,
-          "center_score": -0.014,
+          "center_score": -0.006,
           "most_vulnerable": [
-            "Guard"
+            "Forward"
           ],
           "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
         }
@@ -6346,20 +6376,20 @@
       },
       "def_vs_position": {
         "away_defense": {
-          "guard_score": -0.004,
+          "guard_score": -0.007,
           "forward_score": -0.004,
-          "center_score": -0.031,
+          "center_score": -0.013,
           "most_vulnerable": [
-            "Guard"
+            "Forward"
           ],
           "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
         },
         "home_defense": {
-          "guard_score": -0.001,
+          "guard_score": -0.002,
           "forward_score": -0.001,
-          "center_score": -0.01,
+          "center_score": -0.005,
           "most_vulnerable": [
-            "Guard"
+            "Forward"
           ],
           "method": "inferred_from_leaguedashptteamdefend_pct_plusminus"
         }
@@ -6380,8 +6410,18 @@
           "ft_pct": 0.877,
           "usg_pct": 0.342,
           "ts_pct": 0.667,
-          "home_split": null,
-          "away_split": null,
+          "home_split": {
+            "pts": 26.4,
+            "reb": 11.8,
+            "ast": 3.3,
+            "fg_pct": 0.528
+          },
+          "away_split": {
+            "pts": 23.6,
+            "reb": 11.3,
+            "ast": 3.0,
+            "fg_pct": 0.493
+          },
           "projected_pts": 215.0,
           "projected_reb": 100.0,
           "projected_ast": 29.0,
@@ -6540,7 +6580,12 @@
             "ast": 6.9,
             "fg_pct": 0.482
           },
-          "away_split": null,
+          "away_split": {
+            "pts": 23.3,
+            "reb": 6.8,
+            "ast": 6.5,
+            "fg_pct": 0.443
+          },
           "projected_pts": 245.0,
           "projected_reb": 64.0,
           "projected_ast": 63.0,

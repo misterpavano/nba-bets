@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Best Bets — March 26, 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+    :root {
+      --bg: #0d0d0f; --surface: #151518; --surface2: #1c1c21;
+      --gold: #f0b429; --gold-dim: #c8952a; --red: #e53e3e; --red-dim: #9b2c2c;
+      --green: #38a169; --blue: #3182ce; --yellow: #d69e2e;
+      --text: #e8e8ed; --muted: #8888a0; --border: #2a2a35;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; max-width: 820px; margin: 0 auto; padding: 20px 16px 60px; }
+    .masthead { text-align: center; padding: 36px 0 24px; border-bottom: 2px solid var(--gold); margin-bottom: 30px; }
+    .masthead .badge { display: inline-block; background: var(--gold); color: #000; font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 2px; margin-bottom: 12px; text-transform: uppercase; }
+    .masthead h1 { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: 1px; color: #fff; }
+    .masthead .subtitle { color: var(--muted); font-size: 14px; margin-top: 6px; letter-spacing: 0.5px; }
+    .slate { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; margin-bottom: 30px; }
+    .slate-title { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .slate-game { font-size: 14px; color: var(--text); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .slate-game:last-child { border-bottom: none; }
+    .slate-time { color: var(--muted); font-size: 12px; min-width: 90px; text-align: right; }
+    .divider { height: 1px; background: var(--border); margin: 28px 0; }
+    .pick-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 22px 18px; margin-bottom: 22px; position: relative; overflow: hidden; }
+    .pick-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+    .pick-card.green::before { background: var(--green); }
+    .pick-card.blue::before { background: var(--blue); }
+    .pick-card.yellow::before { background: var(--yellow); }
+    .pick-card.red::before { background: var(--red); }
+    .pick-num { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+    .pick-headline { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 4px; }
+    .pick-odds { display: inline-block; background: var(--surface2); border: 1px solid var(--border); color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; padding: 3px 12px; border-radius: 4px; margin: 8px 0 10px; }
+    .pick-meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+    .injury-confirm { background: rgba(56,161,105,0.12); border: 1px solid rgba(56,161,105,0.4); border-radius: 5px; padding: 8px 12px; font-size: 13px; color: #68d391; margin-bottom: 14px; }
+    .injury-warn { background: rgba(214,158,46,0.12); border: 1px solid rgba(214,158,46,0.4); border-radius: 5px; padding: 8px 12px; font-size: 13px; color: #f6e05e; margin-bottom: 14px; }
+    .pick-analysis p { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 12px; }
+    .pick-edge { background: var(--surface2); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #e8d99a; font-style: italic; border-radius: 0 4px 4px 0; margin-top: 4px; }
+    .stat-row { display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    .stat-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 14px; text-align: center; min-width: 80px; }
+    .stat-val { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: var(--gold); }
+    .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .section-label { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .zone { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 22px 18px; margin-bottom: 22px; }
+    .zone-label { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; color: var(--gold); margin-bottom: 14px; letter-spacing: 0.5px; }
+    .longshot-bet { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .longshot-odds { display: inline-block; background: rgba(229,62,62,0.15); border: 1px solid var(--red); color: var(--red); font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; padding: 4px 14px; border-radius: 4px; margin: 8px 0 14px; }
+    .longshot-legs { list-style: none; margin: 12px 0; }
+    .longshot-legs li { padding: 7px 0; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text); }
+    .longshot-legs li:last-child { border-bottom: none; }
+    .longshot-legs li .leg-num { color: var(--gold); font-weight: 600; margin-right: 8px; }
+    .longshot-corr { font-size: 13px; color: var(--muted); margin-top: 12px; font-style: italic; }
+    .journey-record { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 14px; }
+    .journey-record span { color: var(--gold); }
+    .journey-yesterday { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 14px; }
+    .journey-lesson { background: var(--surface2); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #e8d99a; border-radius: 0 4px 4px 0; font-style: italic; }
+    .disclaimer { font-size: 12px; color: var(--muted); text-align: center; margin-top: 40px; line-height: 1.7; border-top: 1px solid var(--border); padding-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="badge">🏀 Daily Picks</div>
+  <h1>NBA BEST BETS</h1>
+  <div class="subtitle">Thursday, March 26, 2026 &nbsp;&middot;&nbsp; 3-game slate &nbsp;&middot;&nbsp; Bet365 odds</div>
+</div>
+
+<div class="slate">
+  <div class="slate-title">Today's Slate</div>
+  <div class="slate-game"><span>New York Knicks @ Charlotte Hornets</span><span class="slate-time">7:00 PM ET · FanDuel SN SE</span></div>\n<div class="slate-game"><span>New Orleans Pelicans @ Detroit Pistons</span><span class="slate-time">7:00 PM ET · FanDuel SN DET</span></div>\n<div class="slate-game"><span>Sacramento Kings @ Orlando Magic</span><span class="slate-time">7:00 PM ET · FanDuel SN FL</span></div>\n
+</div>
+
+<div class="section-label">Today's Best Bets</div>
+
+
+<div class="pick-card green">
+  <div class="pick-num">Pick 01</div>
+  <div class="pick-headline">🟢 Jalen Suggs Over 1.5 3-Pointers Made</div>
+  <div class="pick-odds">-115 · Bet365</div>
+  <div class="pick-meta">Sacramento Kings @ Orlando Magic — 7:00 PM ET</div>
+  <div class="injury-confirm">&#x2705; Player not listed OUT on ESPN injury feed (March 26, 2026)</div>
+  <div class="pick-analysis"><p>Jalen Suggs averages 2.0 3PM in his last 8 games. Sacramento's defense is ranked #28 and allows 13.67 3PM/g (11th most). They are also vulnerable to Guards (guard_score 0.007).</p></div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> Strong over based on player form and opponent's defensive weakness against guards and 3-pointers.</div>
+  <div class="pick-meta">Data points: 2.0 (projected 3PM) · 13.67 (SAC opp 3PM/g) · 0.007 (SAC guard_score)</div>
+</div>
+<div class="pick-card blue">
+  <div class="pick-num">Pick 02</div>
+  <div class="pick-headline">🔵 Zion Williamson Under 22.5 Points</div>
+  <div class="pick-odds">-115 · Bet365</div>
+  <div class="pick-meta">New Orleans Pelicans @ Detroit Pistons — 7:00 PM ET</div>
+  <div class="injury-confirm">&#x2705; Player not listed OUT on ESPN injury feed (March 26, 2026)</div>
+  <div class="pick-analysis"><p>Zion Williamson is projected for 20.5 points based on his last 10 games. Detroit boasts the league's #2 ranked defense with a def_rating of 109.0, posing a tough matchup.</p></div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> Strong under given Zion's recent average against an elite defensive opponent.</div>
+  <div class="pick-meta">Data points: 20.5 (projected PTS) · 109.0 (DET def_rating) · 2 (DET def_rank)</div>
+</div>
+<div class="pick-card yellow">
+  <div class="pick-num">Pick 03</div>
+  <div class="pick-headline">🟡 Orlando Magic -15.5</div>
+  <div class="pick-odds">-110 · Bet365</div>
+  <div class="pick-meta">Sacramento Kings @ Orlando Magic — 7:00 PM ET</div>
+  <div class="injury-confirm">&#x2705; Multiple key Sacramento players are OUT (Sabonis, LaVine, Murray, Hunter, Westbrook).</div>
+  <div class="pick-analysis"><p>Sacramento is severely depleted with multiple key players out, leading to a -10.1 net rating. Orlando has a significantly better defense (#14 def_rank) compared to Sacramento (#28 def_rank).</p></div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> High confidence in Orlando covering due to Sacramento's extensive injury list and defensive struggles.</div>
+  <div class="pick-meta">Data points: -15.5 (spread) · 14 (ORL def_rank) · 28 (SAC def_rank)</div>
+</div>
+<div class="pick-card red">
+  <div class="pick-num">Pick 04</div>
+  <div class="pick-headline">🔴 DeMar DeRozan Under 20.5 Points</div>
+  <div class="pick-odds">-115 · Bet365</div>
+  <div class="pick-meta">Sacramento Kings @ Orlando Magic — 7:00 PM ET</div>
+  <div class="injury-confirm">&#x2705; Player not listed OUT on ESPN injury feed (March 26, 2026)</div>
+  <div class="pick-analysis"><p>DeMar DeRozan is projected for 18.44 points (L10 avg). Sacramento is missing key offensive players, increasing defensive attention. Orlando's defense is ranked #14, and the game has a large -15.5 spread.</p></div>
+  <div class="pick-edge"><strong>Why the number is beatable:</strong> Strong under due to increased defensive focus and a tough defensive matchup.</div>
+  <div class="pick-meta">Data points: 18.44 (projected PTS) · 9 (GP_L10) · 14 (ORL def_rank)</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Long Shot</div>
+
+<div class="zone">
+  <div class="zone-label">🎰 Long Shot — +450</div>
+  <div class="longshot-bet">SGP: Jalen Suggs Over 1.5 3-Pointers Made + Paolo Banchero Over 22.5 Points + Orlando Magic -15.5</div>
+  <div class="longshot-corr">Orlando is heavily favored (-15.5 spread) against a severely depleted Sacramento team. Suggs (projected 2.0 3PM) should hit his 3s against a weak defense (#28 def_rank), and Banchero (projected 24.32 points) should score efficiently before a potential blowout.</div>
+</div>
+
+</body>
+</html>
