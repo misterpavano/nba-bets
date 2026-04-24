@@ -1,335 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBA Best Bets — April 23, 2026</title>
-    <style>
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-card: #1a1a1a;
-            --accent-orange: #ff6b35;
-            --accent-green: #00c853;
-            --accent-blue: #2962ff;
-            --text-primary: #f5f5f5;
-            --text-secondary: #888;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            border-bottom: 3px solid var(--accent-orange);
-        }
-        header h1 {
-            font-size: 2.5em;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: -0.02em;
-        }
-        header .meta { color: var(--text-secondary); font-size: 1.1em; }
-        .intro {
-            text-align: center;
-            padding: 30px 20px;
-            font-style: italic;
-            color: var(--text-secondary);
-            border-bottom: 1px solid #333;
-        }
-        .picks-section { margin: 30px 0; }
-        .picks-section h2 {
-            color: var(--accent-orange);
-            margin-bottom: 25px;
-            font-size: 1.3em;
-            text-align: center;
-        }
-        .pick-card {
-            background: var(--bg-card);
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 12px;
-            border-left: 5px solid var(--accent-orange);
-        }
-        .pick-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        .pick-number {
-            background: var(--accent-orange);
-            color: #000;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.75em;
-            font-weight: 800;
-        }
-        .pick-text { font-weight: 700; font-size: 1.2em; }
-        .game-info {
-            background: var(--bg-secondary);
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            color: var(--text-secondary);
-        }
-        .team-breakdown {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        .team {
-            background: var(--bg-secondary);
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 0.9em;
-        }
-        .player-stats, .the-math {
-            margin: 15px 0;
-            padding: 15px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-        }
-        .player-stats h4, .the-math h4 {
-            color: var(--accent-orange);
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-        .player-stats ul, .the-math ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .player-stats li, .the-math li {
-            padding: 5px 0;
-            border-bottom: 1px solid #333;
-        }
-        .player-stats li:last-child, .the-math li:last-child {
-            border-bottom: none;
-        }
-        .the-math .edge {
-            color: var(--accent-green);
-            font-weight: 700;
-            font-size: 1.1em;
-        }
-        .pavano-bet {
-            background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 12px;
-            border: 2px solid #7c4dff;
-            text-align: center;
-        }
-        .pavano-bet h3 {
-            color: #7c4dff;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-        .pavano-bet .record {
-            color: var(--text-secondary);
-            font-size: 0.95em;
-            margin-bottom: 15px;
-        }
-        .pavano-bet .bet-text {
-            font-size: 1.4em;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .pavano-bet .bet-reason {
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        .longshot {
-            background: var(--bg-card);
-            padding: 25px;
-            margin: 25px 0;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-        .longshot h3 {
-            color: var(--accent-orange);
-            margin-bottom: 15px;
-        }
-        .longshot .sgp-text {
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-        .longshot .sgp-odds {
-            color: var(--text-secondary);
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-secondary);
-            font-size: 0.9em;
-            border-top: 1px solid #333;
-            margin-top: 30px;
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8em; }
-            .team-breakdown { grid-template-columns: 1fr; }
-            .container { padding: 15px; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>🏀 NBA Best Bets</h1>
-        <p class="meta">April 23, 2026 · 3 picks with full research</p>
-    </header>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NBA Daily Bets</title>
+        <style>
+            body { font-family: sans-serif; margin: 20px; background-color: #1a1a1a; color: #e0e0e0; }
+            .container { max-width: 800px; margin: auto; background-color: #2a2a2a; padding: 20px; border-radius: 8px; }
+            h1, h2, h3 { color: #4CAF50; }
+            .game { border: 1px solid #3a3a3a; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+            .game-info { margin-bottom: 10px; }
+            .odds { font-size: 0.9em; color: #cccccc; }
+            .player-stats, .team-stats, .injuries { margin-top: 10px; border-top: 1px solid #3a3a3a; padding-top: 10px; }
+            .sharp-angle { background-color: #333333; padding: 10px; border-left: 5px solid #FFC107; margin-top: 10px; }
+            .no-games { text-align: center; font-size: 1.2em; color: #ff0000; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>NBA Daily Bets: April 24, 2026</h1>
+            <p>Generated at: 2026-04-24T21:19:30.265323+00:00</p>
     
-    <div class="container">
-        <div class="intro">
-            "I dug through every stat that matters. Here's what the data says."
-        </div>
+            <h2>Matchups</h2>
         
-        <div class="picks-section">
-            
-        <div class="pick-card" style="border-left-color: #00c853">
-            <div class="pick-header">
-                <span class="pick-number" style="background: #00c853">PICK 1</span>
-                <span class="pick-text">Nikola Jokić Over 14.5 Rebounds (-110)</span>
-            </div>
-            
-            <div class="game-info">
-                <strong>Denver Nuggets @ Minnesota Timberwolves</strong> — 9:30 PM ET<br>
-                Line: DEN -2.5 | Total: 232.5
-            </div>
-            
-            <div class="team-breakdown">
-                <div class="team">
-                    <strong>DEN (Road)</strong><br>
-                    Defense: #8<br>
-                    Usage: 26.8% | TS%: 62.8%
+            <div class="game">
+                <h3>Boston Celtics @ Philadelphia 76ers <span style="float:right;">7:00 PM ET</span></h3>
+                <div class="game-info">
+                    <p><strong>Odds:</strong> Spread: BOS -8.5, Over/Under: 215.5</p>
+                    <p class="odds">Moneyline: Away None, Home None</p>
                 </div>
-            </div>
             
-            <div class="player-stats">
-                <h4>Last 7 Games:</h4>
+                <h4>Sharp Angles</h4>
                 <ul>
-                    <li><strong>14.6 REB/g</strong> on 35.3 MPG</li>
-                    <li>25.7 PTS, 11.7 AST per game</li>
+                <li>Boston Celtics allows 14.01 3PM/g (#8 most). Target Philadelphia 76ers perimeter volume.</li><li>Defense tier gap: Boston Celtics #4 vs Philadelphia 76ers #17.</li>
                 </ul>
-            </div>
-            
-            <div class="the-math">
-                <h4>The Math:</h4>
-                <ul>
-                    <li>Recent: 14.6 REB/g</li>
-                    <li>Projected: 15.3</li>
-                    <li>Line: 14.5</li>
-                    <li class="edge">EDGE: +0.8 rebounds</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="pick-card" style="border-left-color: #2962ff">
-            <div class="pick-header">
-                <span class="pick-number" style="background: #2962ff">PICK 2</span>
-                <span class="pick-text">Brandon Ingram Over 19.5 Points (-110)</span>
-            </div>
-            
-            <div class="game-info">
-                <strong>Cleveland Cavaliers @ Toronto Raptors</strong> — 8:00 PM ET<br>
-                Line: CLE -2.5 | Total: 221.5
-            </div>
-            
-            <div class="team-breakdown">
-                <div class="team">
-                    <strong>TOR (Home)</strong><br>
-                    Defense: #15<br>
-                    Usage: 24.7% | TS%: 62.8%
+                
+                <div class="team-stats">
+                    <h4>Team Stats</h4>
+                    <p><strong>Boston Celtics:</strong> Def Rating: 111.7, Pace: 95.58</p>
+                    <p><strong>Philadelphia 76ers:</strong> Def Rating: 114.4, Pace: 100.4</p>
                 </div>
-            </div>
             
-            <div class="player-stats">
-                <h4>Last 2 Games:</h4>
-                <ul>
-                    <li><strong>21.1 PTS/g</strong> on 31.8 MPG</li>
-                    <li>5.4 REB, 3.6 AST per game</li>
-                </ul>
-            </div>
-            
-            <div class="the-math">
-                <h4>The Math:</h4>
-                <ul>
-                    <li>Recent: 21.1 PTS/g</li>
-                    <li>Projected: 20.1</li>
-                    <li>Line: 19.5</li>
-                    <li class="edge">EDGE: +0.6 points</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="pick-card" style="border-left-color: #ff9100">
-            <div class="pick-header">
-                <span class="pick-number" style="background: #ff9100">PICK 3</span>
-                <span class="pick-text">RJ Barrett Over 19.5 Points (-110)</span>
-            </div>
-            
-            <div class="game-info">
-                <strong>Cleveland Cavaliers @ Toronto Raptors</strong> — 8:00 PM ET<br>
-                Line: CLE -2.5 | Total: 221.5
-            </div>
-            
-            <div class="team-breakdown">
-                <div class="team">
-                    <strong>TOR (Home)</strong><br>
-                    Defense: #15<br>
-                    Usage: 26.5% | TS%: 58.5%
+                <div class="player-stats">
+                    <h4>Key Players (Last 10 Games)</h4>
+                    <ul>
+                <li>Jaylen Brown (BOS): PTS 182.0, REB 34.0, AST 27.0</li><li>Jayson Tatum (BOS): PTS 176.0, REB 77.0, AST 52.0</li><li>Payton Pritchard (BOS): PTS 183.0, REB 32.0, AST 42.0</li><li>Ron Harper Jr. (BOS): PTS 41.0, REB 11.0, AST 7.0</li><li>Luka Garza (BOS): PTS 88.0, REB 38.0, AST 9.0</li><li>Kyle Lowry (PHI): PTS 3.0, REB 0.0, AST 0.0</li><li>Tyrese Maxey (PHI): PTS 213.0, REB 39.0, AST 54.0</li><li>Paul George (PHI): PTS 210.0, REB 57.0, AST 33.0</li><li>MarJon Beauchamp (PHI): PTS 8.0, REB 1.0, AST 1.0</li><li>VJ Edgecombe (PHI): PTS 157.0, REB 53.0, AST 55.0</li>
+                    </ul>
                 </div>
+                
             </div>
             
-            <div class="player-stats">
-                <h4>Last 2 Games:</h4>
+            <div class="game">
+                <h3>Los Angeles Lakers @ Houston Rockets <span style="float:right;">8:00 PM ET</span></h3>
+                <div class="game-info">
+                    <p><strong>Odds:</strong> Spread: HOU -8.5, Over/Under: 206.5</p>
+                    <p class="odds">Moneyline: Away None, Home None</p>
+                </div>
+            
+                <h4>Sharp Angles</h4>
                 <ul>
-                    <li><strong>21.1 PTS/g</strong> on 31.6 MPG</li>
-                    <li>5.0 REB, 3.3 AST per game</li>
+                <li>Defense tier gap: Houston Rockets #5 vs Los Angeles Lakers #19.</li>
                 </ul>
+                
+                <div class="team-stats">
+                    <h4>Team Stats</h4>
+                    <p><strong>Los Angeles Lakers:</strong> Def Rating: 115.5, Pace: 99.22</p>
+                    <p><strong>Houston Rockets:</strong> Def Rating: 112.1, Pace: 96.98</p>
+                </div>
+            
+                <div class="player-stats">
+                    <h4>Key Players (Last 10 Games)</h4>
+                    <ul>
+                <li>Luka Dončić (LAL): PTS 138.0, REB 23.0, AST 29.0</li><li>LeBron James (LAL): PTS 187.0, REB 63.0, AST 81.0</li><li>Nick Smith Jr. (LAL): PTS 39.0, REB 3.0, AST 3.0</li><li>Kobe Bufkin (LAL): PTS 13.0, REB 4.0, AST 5.0</li><li>Dalton Knecht (LAL): PTS 27.0, REB 7.0, AST 5.0</li><li>Tristen Newton (HOU): PTS 12.0, REB 3.0, AST 0.0</li><li>Kevin Durant (HOU): PTS 233.0, REB 52.0, AST 62.0</li><li>Alperen Sengun (HOU): PTS 173.0, REB 77.0, AST 58.0</li><li>Isaiah Crawford (HOU): PTS 11.0, REB 6.0, AST 1.0</li><li>Jabari Smith Jr. (HOU): PTS 164.0, REB 64.0, AST 17.0</li>
+                    </ul>
+                </div>
+                
             </div>
             
-            <div class="the-math">
-                <h4>The Math:</h4>
+            <div class="game">
+                <h3>San Antonio Spurs @ Portland Trail Blazers <span style="float:right;">10:30 PM ET</span></h3>
+                <div class="game-info">
+                    <p><strong>Odds:</strong> Spread: SA -3.5, Over/Under: 219.5</p>
+                    <p class="odds">Moneyline: Away None, Home None</p>
+                </div>
+            
+                <h4>Sharp Angles</h4>
                 <ul>
-                    <li>Recent: 21.1 PTS/g</li>
-                    <li>Projected: 20.1</li>
-                    <li>Line: 19.5</li>
-                    <li class="edge">EDGE: +0.6 points</li>
+                <li>Defense tier gap: San Antonio Spurs #3 vs Portland Trail Blazers #12.</li>
                 </ul>
+                
+                <div class="team-stats">
+                    <h4>Team Stats</h4>
+                    <p><strong>San Antonio Spurs:</strong> Def Rating: 110.4, Pace: 100.72</p>
+                    <p><strong>Portland Trail Blazers:</strong> Def Rating: 113.5, Pace: 101.63</p>
+                </div>
+            
+                <div class="player-stats">
+                    <h4>Key Players (Last 10 Games)</h4>
+                    <ul>
+                <li>Victor Wembanyama (SAS): PTS 215.0, REB 100.0, AST 29.0</li><li>Lindy Waters III (SAS): PTS 7.0, REB 2.0, AST 1.0</li><li>De'Aaron Fox (SAS): PTS 146.0, REB 32.0, AST 51.0</li><li>Keldon Johnson (SAS): PTS 148.0, REB 49.0, AST 16.0</li><li>Stephon Castle (SAS): PTS 142.0, REB 58.0, AST 76.0</li><li>Shaedon Sharpe (POR): PTS 17.0, REB 5.0, AST 6.0</li><li>Deni Avdija (POR): PTS 245.0, REB 64.0, AST 63.0</li><li>Blake Wesley (POR): PTS 26.0, REB 8.0, AST 6.0</li><li>Jerami Grant (POR): PTS 37.0, REB 6.0, AST 0.0</li><li>Jrue Holiday (POR): PTS 179.0, REB 54.0, AST 52.0</li>
+                    </ul>
+                </div>
+                
             </div>
+            
+            <h2>Injuries (Out/Doubtful/Suspended)</h2>
+            <ul>
+            <li>Keshon Gilbert (Atlanta Hawks): Out - Gilbert signed a two-way contract with the Hawks on Tuesday, according to Jake Fischer of BleacherReport.com.</li><li>Jock Landale (Atlanta Hawks): Out - Landale (ankle) will be re-evaluated in two weeks, Brad Rowland of the Locked On Podcast Network reports.</li><li>Nolan Traore (Brooklyn Nets): Out - Traore (illness) has been ruled out for Sunday's game against the Raptors.</li><li>Nic Claxton (Brooklyn Nets): Out - Claxton (finger) is out for Sunday's game in Toronto, Erik Slater of ClutchPoints.com reports.</li><li>Ziaire Williams (Brooklyn Nets): Out - Williams (foot) will miss Sunday's regular-season finale against the Raptors, Erik Slater of ClutchPoints.com reports.</li><li>Noah Clowney (Brooklyn Nets): Out - Clowney (ankle) won't play Sunday in Toronto, Erik Slater of ClutchPoints.com reports.</li><li>Terance Mann (Brooklyn Nets): Out - Mann (knee) is out for Sunday's game against the Raptors, Erik Slater of ClutchPoints.com reports.</li><li>Josh Minott (Brooklyn Nets): Out - Minott (ankle) won't play Sunday in Toronto, Erik Slater of ClutchPoints.com reports.</li><li>Michael Porter Jr. (Brooklyn Nets): Out - Porter (hamstring) has been ruled out for the remainder of the 2025-26 season, Erik Slater of ClutchPoints.com reports.</li><li>Danny Wolf (Brooklyn Nets): Out - The Nets announced Friday that Wolf (ankle) is being shut down for the rest of the season, Erik Slater of ClutchPoints.com reports.</li><li>Egor Demin (Brooklyn Nets): Out - Demin underwent a non-surgical procedure to address plantar fasciitis in his left foot, and there's hope he will make a full recovery in time for NBA Summer League, Brian Lewis of the New York Post reports</li><li>Day'Ron Sharpe (Brooklyn Nets): Out - Sharpe has been diagnosed with an ulnar collateral ligament tear in his left thumb and will require season-ending surgery, Erik Slater of ClutchPoints.com reports.</li><li>PJ Hall (Charlotte Hornets): Out - The Hornets announced Thursday that Hall underwent a procedure to address a fractured right ankle and will miss the remainder of the 2025-26 campaign.</li><li>Rob Dillingham (Chicago Bulls): Out - Dillingham recently underwent successful minor surgery to have a ganglion cyst removed from his right wrist, the Bulls announced Wednesday.</li><li>Isaac Okoro (Chicago Bulls): Out - Okoro (quad) is out for Sunday's game in Dallas.</li><li>Matas Buzelis (Chicago Bulls): Out - Buzelis (ankle) won't play Sunday in Dallas.</li><li>Anfernee Simons (Chicago Bulls): Out - Simons (wrist) will not play in Chicago's final two games of the regular season, per K.C. Johnson of Chicago Sports Network.</li><li>Guerschon Yabusele (Chicago Bulls): Out - Head coach Billy Donovan said Friday that Yabusele (shoulder/elbow) will not play in Chicago's final two regular-season games, K.C. Johnson of Chicago Sports Network reports.</li><li>Nick Richards (Chicago Bulls): Out - Richards (elbow) will not play in Chicago's final two games of the regular season, per K.C. Johnson of Chicago Sports Network.</li><li>Josh Giddey (Chicago Bulls): Out - Giddey (hamstring) will not play in Chicago's final two games of the regular season, per K.C. Johnson of Chicago Sports Network.</li><li>Jalen Smith (Chicago Bulls): Out - Smith (calf) will miss the remainder of the season, Joel Lorenzi of The Athletic reports.</li><li>Zach Collins (Chicago Bulls): Out - Collins will undergo surgery for a sprain right toe and will be sidelined for the rest of the 2025-26 season.</li><li>Noa Essengue (Chicago Bulls): Out - Essengue will undergo left shoulder surgery and will miss the remainder of the 2025-26 season, K.C. Johnson of Chicago Sports Network reports.</li><li>Cooper Flagg (Dallas Mavericks): Out - Flagg (ankle) will not return to Sunday's game against the Bulls.</li><li>Brandon Williams (Dallas Mavericks): Out - Williams (illness) is unavailable for Sunday's game against Chicago.</li><li>Marvin Bagley III (Dallas Mavericks): Out - Bagley (shoulder) has been ruled out for Sunday's game against the Bulls.</li><li>P.J. Washington (Dallas Mavericks): Out - Washington (elbow) is listed as out for Sunday's game against the Bulls.</li><li>Caleb Martin (Dallas Mavericks): Out - Martin (heel) is listed as out for Sunday's game against Chicago.</li><li>Naji Marshall (Dallas Mavericks): Out - Marshall (hip) is listed as out for Sunday's game against Chicago.</li><li>Kyrie Irving (Dallas Mavericks): Out - Irving (knee) will miss the remainder of the 2025-26 season, ESPN's Shams Charania reports.</li><li>Dereck Lively II (Dallas Mavericks): Out - Lively successfully underwent surgery on his right foot Sunday.</li><li>Peyton Watson (Denver Nuggets): Out - Watson (hamstring) is out for Game 3 on Thursday against Minnesota.</li><li>Quinten Post (Golden State Warriors): Out - Post (foot) averaged 7.7 points, 4.0 rebounds, 1.4 assists, 0.5 blocks and 0.4 steals in 17.3 minutes per game across 67 regular-season appearances (35 starts) in 2025-26.</li><li>LJ Cryer (Golden State Warriors): Out - Cryer (ankle) will be re-evaluated in one week after an MRI confirmed a right-ankle sprain.</li><li>Moses Moody (Golden State Warriors): Out - Moody has been diagnosed with a torn patellar tendon in his left knee, Shams Charania of ESPN reports.</li><li>Jimmy Butler III (Golden State Warriors): Out - Butler underwent successful surgery Monday to repair a torn right anterior cruciate ligament.</li><li>Steven Adams (Houston Rockets): Out - The Rockets announced Wednesday that Adams has undergone season-ending left ankle surgery, per Shams Charania of ESPN.</li><li>Fred VanVleet (Houston Rockets): Out - VanVleet suffered a torn ACL and may be out for the entire 2025-26 campaign, Shams Charania of ESPN reports.</li><li>Ben Sheppard (Indiana Pacers): Out - Sheppard (hip) won't play in Sunday's game against Detroit, Tony East of Forbes.com reports.</li><li>Jarace Walker (Indiana Pacers): Out - Walker (foot) won't play in Sunday's game against Detroit, Tony East of Forbes.com reports.</li><li>Andrew Nembhard (Indiana Pacers): Out - Nembhard (back) has been ruled out for Sunday's game against the Pistons.</li><li>Aaron Nesmith (Indiana Pacers): Out - Nesmith (neck) won't play Sunday against the Pistons.</li><li>Pascal Siakam (Indiana Pacers): Out - Siakam (ankle) has been ruled out for Sunday's meeting with the Pistons.</li><li>T.J. McConnell (Indiana Pacers): Out - McConnell (hamstring) has been ruled out for Sunday's game against the Pistons.</li><li>Tyrese Haliburton (Indiana Pacers): Out - Haliburton announced via his personal X account that he participated in 5-on-5 work Wednesday.</li><li>Ivica Zubac (Indiana Pacers): Out - Zubac will miss the rest of the season with a fractured rib, Dustin Dopirak of The Indianapolis Star reports.</li><li>Johnny Furphy (Indiana Pacers): Out - Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.</li><li>Yanic Konan Niederhauser (LA Clippers): Out - Niederhauser has been diagnosed with a Lisfranc injury in his right foot and will require surgery. He's been ruled out for the remainder of the 2025-26 season, Joey Linn of SI.com reports.</li><li>Bradley Beal (LA Clippers): Out - Beal will undergo season-ending surgery on his left hip, ESPN's Shams Charania reports.</li><li>Austin Reaves (Los Angeles Lakers): Out - Reaves (oblique) is questionable for Game 3 against the Rockets on Friday, Brett Siegel of ClutchPoints.com reports.</li><li>Luka Doncic (Los Angeles Lakers): Out - ESPN's Shams Charania reported Tuesday on NBA Today that the Lakers are not expecting Doncic (hamstring) to return during the first round of the Western Conference playoffs.</li><li>Walter Clayton Jr. (Memphis Grizzlies): Out - Clayton (hip) is out for Sunday's game against the Rockets.</li><li>Adama Bal (Memphis Grizzlies): Out - Bal (ankle) is out for Sunday's game in Houston.</li><li>Cedric Coward (Memphis Grizzlies): Out - Coward (back) has been ruled out for Sunday's game against Houston.</li><li>Cam Spencer (Memphis Grizzlies): Out - Spencer (back) will not play in Sunday's season finale against the Rockets.</li><li>GG Jackson (Memphis Grizzlies): Out - Jackson (knee) is out for Sunday's season finale against the Rockets.</li><li>Taylor Hendricks (Memphis Grizzlies): Out - Hendricks (thumb) will not play Sunday against the Rockets.</li><li>Ty Jerome (Memphis Grizzlies): Out - Jerome (ankle) is out for Sunday's season finale against the Rockets.</li><li>Jaylen Wells (Memphis Grizzlies): Out - Wells (toe) underwent a successful procedure Tuesday to stabilize his right great toe.</li><li>Zach Edey (Memphis Grizzlies): Out - The Grizzlies announced that Edey (ankle) underwent a procedure Tuesday to address lingering discomfort in his left elbow.</li><li>Ja Morant (Memphis Grizzlies): Out - The Grizzlies announced Tuesday that Morant is progressing in his recovery from a UCL sprain in his left elbow and recently received a platelet-rich plasma injection, though he'll miss the remainder of the 2025-26 campaign.</li><li>Brandon Clarke (Memphis Grizzlies): Out - Clarke needs additional time to recover from a right calf strain and has been ruled out for the rest of the 2025-26 season.</li><li>Santi Aldama (Memphis Grizzlies): Out - Aldama will undergo a season-ending arthroscopic procedure and receive an orthobiologic injection to address discomfort in his right knee, Brett Siegel of ClutchPoints.com reports.</li><li>Scotty Pippen Jr. (Memphis Grizzlies): Out - Pippen will miss the remainder of the season after undergoing a sesamoidectomy to address ongoing discomfort in his right big toe, Michael Scotto of USA Today reports Friday.</li><li>Kentavious Caldwell-Pope (Memphis Grizzlies): Out - The Grizzlies announced Thursday that Caldwell-Pope underwent surgery to address the misalignment of his right pinky finger and will miss the remainder of the 2025-26 campaign.</li><li>Bam Adebayo (Miami Heat): Out - Adebayo (back) won't return to Tuesday's Play-In game against the Hornets.</li><li>Dru Smith (Miami Heat): Out - Smith (foot) has been ruled out for Tuesday's Play-In Tournament game against the Hornets.</li><li>Nikola Jovic (Miami Heat): Out - Jovic (ankle) is out for Tuesday's Play-In Game against the Hornets.</li><li>Pete Nance (Milwaukee Bucks): Out - Nance (knee) will suit up for Sunday's game against the Sixers but will not play, Ky Carlin of USA Today reports.</li><li>Gary Harris (Milwaukee Bucks): Out - Harris (groin) has been ruled out for Sunday's game against the 76ers, Ky Carlin of USA Today reports.</li><li>Myles Turner (Milwaukee Bucks): Out - Turner (ankle) has been ruled out for Sunday's game versus the 76ers.</li><li>Gary Trent Jr. (Milwaukee Bucks): Out - Trent (oblique) is out for Sunday's game in Philadelphia.</li><li>Ryan Rollins (Milwaukee Bucks): Out - Rollins (hip) has been ruled out for Sunday's meeting with the 76ers.</li><li>Bobby Portis (Milwaukee Bucks): Out - Portis (wrist) will remain on the inactive list for Sunday's game in Philadelphia.</li><li>Kyle Kuzma (Milwaukee Bucks): Out - Kuzma (Achilles) won't play Sunday against the 76ers.</li><li>Giannis Antetokounmpo (Milwaukee Bucks): Out - Antetokounmpo (knee) has been ruled out for Sunday's game against the 76ers.</li><li>Kevin Porter Jr. (Milwaukee Bucks): Out - The Bucks announced that Porter underwent arthroscopic surgery on his right knee Tuesday and will miss the remainder of the 2025-26 campaign.</li><li>Trey Murphy III (New Orleans Pelicans): Out - Murphy (ankle) is listed as out for Friday's game against Minnesota.</li><li>Dejounte Murray (New Orleans Pelicans): Out - Murray (hand)J is out for Sunday's game against the Timberwolves.</li><li>Bryce McGowens (New Orleans Pelicans): Out - McGowens (toe) is out for Sunday's game against the Timberwolves.</li><li>Yves Missi (New Orleans Pelicans): Out - Missi (hand) is listed as out for Sunday's game against Minnesota.</li><li>Karlo Matkovic (New Orleans Pelicans): Out - Matkovic (back) is out for Sunday's game against the Timberwolves.</li><li>Zion Williamson (New Orleans Pelicans): Out - Williamson (knee) is listed as out for Sunday's game against Minnesota.</li><li>Jalen Williams (Oklahoma City Thunder): Out - Williams is considered week-to-week with a Grade 1 left hamstring strain, per Shams Charania of ESPN.</li><li>Thomas Sorber (Oklahoma City Thunder): Out - The Thunder announced Friday that Sorber has sustained a torn ACL in his right knee during an offseason workout, NBA reporter Marc Stein reports.</li><li>Jonathan Isaac (Orlando Magic): Out - Isaac (knee) is doubtful for Game 3 on Saturday against the Pistons.</li><li>Joel Embiid (Philadelphia 76ers): Out - Embiid (abdomen) has been ruled out for Friday's Game 3 against the Celtics, Kyle Neubeck of AllPHLY.com reports.</li><li>Mark Williams (Phoenix Suns): Out - Williams (foot) won't play in Game 3 on Saturday against the Thunder, per Duane Rankin of The Arizona Republic.</li><li>Damian Lillard (Portland Trail Blazers): Out - Lillard (Achilles) defeated Devin Booker and Kon Knueppel in the final round of Saturday's 2026 State Farm 3-Point Contest, taking home his third title.</li><li>Isaiah Stevens (Sacramento Kings): Out - Stevens (ankle) is listed out for Sunday's game against the Trail Blazers.</li><li>DeMar DeRozan (Sacramento Kings): Out - DeRozan (hamstring) has been ruled out for Sunday's game against Portland.</li><li>Malik Monk (Sacramento Kings): Out - Monk (personal) has been ruled out for Sunday's game against Portland.</li><li>Keegan Murray (Sacramento Kings): Out - Murray (ankle) will be sidelined for the Kings' final game of the season Sunday against the Trail Blazers.</li><li>Russell Westbrook (Sacramento Kings): Out - Westbrook (toe) is out for Sunday's season finale against the Trail Blazers.</li><li>Drew Eubanks (Sacramento Kings): Out - Eubanks underwent successful surgery to repair a torn UCL in his left thumb Wednesday and he will miss the remainder of the season, Sean Cunningham of Fox 40 Sacramento reports.</li><li>De'Andre Hunter (Sacramento Kings): Out - Hunter is set to undergo season-ending eye surgery, Chris Haynes of NBA TV reports.</li><li>Domantas Sabonis (Sacramento Kings): Out - Sabonis underwent season-ending knee surgery Wednesday to repair a torn left meniscus, Shams Charania of ESPN reports.</li><li>Zach LaVine (Sacramento Kings): Out - LaVine will undergo season-ending surgery on his right hand after the All-Star break, Chris Haynes of NBA TV reports.</li><li>Jordan McLaughlin (San Antonio Spurs): Out - McLaughlin (ankle) is out for Game 3 against the Trail Blazers on Friday, Paul Garcia of ProjectSpurs.com reports.</li><li>David Jones Garcia (San Antonio Spurs): Out - Jones Garcia underwent ankle surgery Wednesday and will miss the remainder of the 2025-26 season, Tom Orsborn of the San Antonio Express-News reports.</li><li>Immanuel Quickley (Toronto Raptors): Out - Quickley (hamstring) is out for the remainder of Toronto's first-round series against Cleveland, per NBA reporter Marc Stein.</li><li>Chucky Hepburn (Toronto Raptors): Out - Hepburn (knee) has been ruled out for Sunday's regular-season finale against Brooklyn, Esfandiar Baraheni of The Athletic reports.</li><li>Isaiah Collier (Utah Jazz): Out - Collier (hamstring) has been ruled out for Sunday's game against the Lakers.</li><li>Kyle Filipowski (Utah Jazz): Out - Filipowski (back) will not play in Sunday's season finale against the Lakers.</li><li>Elijah Harkless (Utah Jazz): Out - Harkless (hamstring) has been ruled out for Sunday's game against the Lakers.</li><li>Keyonte George (Utah Jazz): Out - George (hamstring) will remain sidelined for Sunday's regular-season finale against the Lakers.</li><li>Lauri Markkanen (Utah Jazz): Out - Markkanen (hip) will not play in Sunday's season finale against the Lakers.</li><li>Jusuf Nurkic (Utah Jazz): Out - Nurkic is scheduled to undergo season-ending nose surgery Wednesday, Chris Haynes of NBA TV reports.</li><li>Jaren Jackson Jr. (Utah Jazz): Out - Jackson was diagnosed with a localized PVNS growth in his left knee and will miss the remainder of the season, Chris Haynes of NBA TV reports.</li><li>Walker Kessler (Utah Jazz): Out - Kessler will undergo left shoulder surgery and will miss the remainder of the 2025-26 season, Tony Jones of The Athletic reports.</li><li>Tristan Vukcevic (Washington Wizards): Out - Vukcevic (knee) is out for Sunday's game in Cleveland.</li><li>Alex Sarr (Washington Wizards): Out - Sarr (toe) has been ruled out for Sunday's regular-season finale against Cleveland.</li><li>Bilal Coulibaly (Washington Wizards): Out - Coulibaly (heel) won't play Sunday against the Cavs.</li><li>Tre Johnson (Washington Wizards): Out - Johnson (foot) has been ruled out for Sunday's regular-season finale against the Cavaliers.</li><li>Anthony Davis (Washington Wizards): Out - Head coach Brian Keefe said Tuesday that Davis (finger) is not expected to play again this season, Chase Hughes of Monumental Sports Network reports.</li><li>Trae Young (Washington Wizards): Out - Young (quadriceps, back) isn't expected to play again in 2025-26, per Chase Hughes of Monumental Sports Network.</li><li>Kyshawn George (Washington Wizards): Out - George (elbow) will miss the rest of the 2025-26 season, Chase Hughes of Monumental Sports Network reports.</li><li>D'Angelo Russell (Washington Wizards): Out - Russell (not injury related) has been ruled out for Tuesday's game against the Magic.</li><li>Cam Whitmore (Washington Wizards): Out - Whitmore has begun the recovery process for a diagnosed venous condition and he will miss the remainder of the 2025-26 season.</li>
+            </ul>
+            
         </div>
-        
-        </div>
-        
-        
-        <div class="longshot">
-            <h3>🎰 PARLAY HUNTERS</h3>
-            <p class="sgp-text">SGP: Nikola Jokić O14.5 Rebounds + Brandon Ingram O19.5 Points + RJ Barrett O19.5 Points</p>
-            <p class="sgp-odds">~+600 | $5 max (entertainment only)</p>
-        </div>
-        
-        
-        <div class="pavano-bet">
-            <h3>🎯 PAVANO'S BET</h3>
-            <p class="record">2W-1L | Bankroll: $107.40</p>
-            <p class="bet-text">Nikola Jokić Over 14.5 Rebounds (-110)</p>
-            <p class="bet-reason">Highest confidence play based on the numbers above.</p>
-        </div>
-        
-    </div>
+    </body>
+    </html>
     
-    <footer>
-        <p>Generated by Pavano · <a href="https://github.com/misterpavano/nba-bets" style="color: var(--accent-orange);">View Archive</a></p>
-    </footer>
-</body>
-</html>
