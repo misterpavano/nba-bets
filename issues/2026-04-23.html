@@ -27,107 +27,157 @@
             text-align: center;
             padding: 40px 20px;
             background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            border-bottom: 2px solid var(--accent-orange);
+            border-bottom: 3px solid var(--accent-orange);
         }
         header h1 {
             font-size: 2.5em;
             font-weight: 800;
-            letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 10px;
+            letter-spacing: -0.02em;
         }
-        header .meta {
+        header .meta { color: var(--text-secondary); font-size: 1.1em; }
+        .intro {
+            text-align: center;
+            padding: 30px 20px;
+            font-style: italic;
             color: var(--text-secondary);
-            font-size: 0.95em;
-        }
-        .slate-info {
-            background: var(--bg-secondary);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 12px;
-        }
-        .slate-info h2 {
-            color: var(--accent-orange);
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        .game {
-            padding: 12px 0;
             border-bottom: 1px solid #333;
         }
-        .game:last-child { border-bottom: none; }
         .picks-section { margin: 30px 0; }
         .picks-section h2 {
             color: var(--accent-orange);
-            margin-bottom: 20px;
-            font-size: 1.4em;
+            margin-bottom: 25px;
+            font-size: 1.3em;
+            text-align: center;
         }
-        .pick {
+        .pick-card {
             background: var(--bg-card);
-            padding: 20px;
-            margin: 15px 0;
+            padding: 25px;
+            margin: 20px 0;
             border-radius: 12px;
-            border-left: 4px solid var(--accent-orange);
+            border-left: 5px solid var(--accent-orange);
         }
         .pick-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 12px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
         }
         .pick-number {
             background: var(--accent-orange);
             color: #000;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 4px;
             font-size: 0.75em;
-            font-weight: 700;
+            font-weight: 800;
         }
-        .pick-emoji { font-size: 1.2em; }
-        .pick-text { font-weight: 600; font-size: 1.1em; }
-        .pick-narrative { color: var(--text-secondary); margin-top: 8px; }
+        .pick-text { font-weight: 700; font-size: 1.2em; }
+        .game-info {
+            background: var(--bg-secondary);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            color: var(--text-secondary);
+        }
+        .team-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .team {
+            background: var(--bg-secondary);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        .player-stats, .the-math {
+            margin: 15px 0;
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+        .player-stats h4, .the-math h4 {
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .player-stats ul, .the-math ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .player-stats li, .the-math li {
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+        }
+        .player-stats li:last-child, .the-math li:last-child {
+            border-bottom: none;
+        }
+        .the-math .edge {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
         .pavano-bet {
             background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
-            padding: 25px;
-            margin: 25px 0;
+            padding: 30px;
+            margin: 30px 0;
             border-radius: 12px;
             border: 2px solid #7c4dff;
+            text-align: center;
         }
         .pavano-bet h3 {
             color: #7c4dff;
             margin-bottom: 10px;
+            font-size: 1.3em;
         }
         .pavano-bet .record {
             color: var(--text-secondary);
-            font-size: 0.9em;
+            font-size: 0.95em;
             margin-bottom: 15px;
         }
         .pavano-bet .bet-text {
-            font-size: 1.2em;
-            font-weight: 600;
+            font-size: 1.4em;
+            font-weight: 700;
             margin-bottom: 10px;
         }
         .pavano-bet .bet-reason {
             color: var(--text-secondary);
+            font-style: italic;
         }
         .longshot {
             background: var(--bg-card);
-            padding: 20px;
-            margin: 20px 0;
+            padding: 25px;
+            margin: 25px 0;
             border-radius: 12px;
             text-align: center;
+            border: 1px solid #333;
         }
-        .longshot h3 { color: var(--accent-orange); margin-bottom: 10px; }
+        .longshot h3 {
+            color: var(--accent-orange);
+            margin-bottom: 15px;
+        }
+        .longshot .sgp-text {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .longshot .sgp-odds {
+            color: var(--text-secondary);
+        }
         footer {
             text-align: center;
             padding: 30px;
             color: var(--text-secondary);
-            font-size: 0.85em;
+            font-size: 0.9em;
             border-top: 1px solid #333;
             margin-top: 30px;
         }
         @media (max-width: 600px) {
             header h1 { font-size: 1.8em; }
+            .team-breakdown { grid-template-columns: 1fr; }
             .container { padding: 15px; }
         }
     </style>
@@ -135,71 +185,151 @@
 <body>
     <header>
         <h1>🏀 NBA Best Bets</h1>
-        <p class="meta">April 23, 2026 · 3-game slate</p>
+        <p class="meta">April 23, 2026 · 3 picks with full research</p>
     </header>
     
     <div class="container">
-        <div class="slate-info">
-            <h2>Today's Slate</h2>
-            
-        <div class="game">
-            <strong>New York Knicks @ Atlanta Hawks</strong> — 7:00 PM ET<br>
-            Spread: NY -1.5 | Total: 214.5
-        </div>
-        
-        <div class="game">
-            <strong>Cleveland Cavaliers @ Toronto Raptors</strong> — 8:00 PM ET<br>
-            Spread: CLE -2.5 | Total: 221.5
-        </div>
-        
-        <div class="game">
-            <strong>Denver Nuggets @ Minnesota Timberwolves</strong> — 9:30 PM ET<br>
-            Spread: DEN -2.5 | Total: 232.5
-        </div>
-        
+        <div class="intro">
+            "I dug through every stat that matters. Here's what the data says."
         </div>
         
         <div class="picks-section">
-            <h2>Today's Best Bets</h2>
             
-        <div class="pick" style="border-left-color: #2962ff">
+        <div class="pick-card" style="border-left-color: #00c853">
             <div class="pick-header">
-                <span class="pick-number">Pick 01</span>
-                <span class="pick-emoji">💪</span>
+                <span class="pick-number" style="background: #00c853">PICK 1</span>
                 <span class="pick-text">Nikola Jokić Over 14.5 Rebounds (-110)</span>
             </div>
-            <p class="pick-narrative">Nikola Jokić is a rebounding machine (14.6/g). The line is too low.</p>
+            
+            <div class="game-info">
+                <strong>Denver Nuggets @ Minnesota Timberwolves</strong> — 9:30 PM ET<br>
+                Line: DEN -2.5 | Total: 232.5
+            </div>
+            
+            <div class="team-breakdown">
+                <div class="team">
+                    <strong>DEN (Road)</strong><br>
+                    Defense: #8<br>
+                    Usage: 26.8% | TS%: 62.8%
+                </div>
+            </div>
+            
+            <div class="player-stats">
+                <h4>Last 7 Games:</h4>
+                <ul>
+                    <li><strong>14.6 REB/g</strong> on 35.3 MPG</li>
+                    <li>25.7 PTS, 11.7 AST per game</li>
+                </ul>
+            </div>
+            
+            <div class="the-math">
+                <h4>The Math:</h4>
+                <ul>
+                    <li>Recent: 14.6 REB/g</li>
+                    <li>Projected: 15.3</li>
+                    <li>Line: 14.5</li>
+                    <li class="edge">EDGE: +0.8 rebounds</li>
+                </ul>
+            </div>
         </div>
         
-        <div class="pick" style="border-left-color: #ffc107">
+        <div class="pick-card" style="border-left-color: #2962ff">
             <div class="pick-header">
-                <span class="pick-number">Pick 02</span>
-                <span class="pick-emoji">📈</span>
-                <span class="pick-text">Over 232.5 DEN@MIN (-110)</span>
+                <span class="pick-number" style="background: #2962ff">PICK 2</span>
+                <span class="pick-text">Brandon Ingram Over 19.5 Points (-110)</span>
             </div>
-            <p class="pick-narrative">Both teams play moderate pace (100.5), and at least one has porous defense (#21). Points should flow.</p>
+            
+            <div class="game-info">
+                <strong>Cleveland Cavaliers @ Toronto Raptors</strong> — 8:00 PM ET<br>
+                Line: CLE -2.5 | Total: 221.5
+            </div>
+            
+            <div class="team-breakdown">
+                <div class="team">
+                    <strong>TOR (Home)</strong><br>
+                    Defense: #15<br>
+                    Usage: 24.7% | TS%: 62.8%
+                </div>
+            </div>
+            
+            <div class="player-stats">
+                <h4>Last 2 Games:</h4>
+                <ul>
+                    <li><strong>21.1 PTS/g</strong> on 31.8 MPG</li>
+                    <li>5.4 REB, 3.6 AST per game</li>
+                </ul>
+            </div>
+            
+            <div class="the-math">
+                <h4>The Math:</h4>
+                <ul>
+                    <li>Recent: 21.1 PTS/g</li>
+                    <li>Projected: 20.1</li>
+                    <li>Line: 19.5</li>
+                    <li class="edge">EDGE: +0.6 points</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pick-card" style="border-left-color: #ff9100">
+            <div class="pick-header">
+                <span class="pick-number" style="background: #ff9100">PICK 3</span>
+                <span class="pick-text">RJ Barrett Over 19.5 Points (-110)</span>
+            </div>
+            
+            <div class="game-info">
+                <strong>Cleveland Cavaliers @ Toronto Raptors</strong> — 8:00 PM ET<br>
+                Line: CLE -2.5 | Total: 221.5
+            </div>
+            
+            <div class="team-breakdown">
+                <div class="team">
+                    <strong>TOR (Home)</strong><br>
+                    Defense: #15<br>
+                    Usage: 26.5% | TS%: 58.5%
+                </div>
+            </div>
+            
+            <div class="player-stats">
+                <h4>Last 2 Games:</h4>
+                <ul>
+                    <li><strong>21.1 PTS/g</strong> on 31.6 MPG</li>
+                    <li>5.0 REB, 3.3 AST per game</li>
+                </ul>
+            </div>
+            
+            <div class="the-math">
+                <h4>The Math:</h4>
+                <ul>
+                    <li>Recent: 21.1 PTS/g</li>
+                    <li>Projected: 20.1</li>
+                    <li>Line: 19.5</li>
+                    <li class="edge">EDGE: +0.6 points</li>
+                </ul>
+            </div>
         </div>
         
         </div>
         
         
         <div class="longshot">
-            <h3>🎰 Long Shot — +600</h3>
-            <p>SGP: Nikola Jokić 14.5 + DEN@MIN Over 232.5</p>
+            <h3>🎰 PARLAY HUNTERS</h3>
+            <p class="sgp-text">SGP: Nikola Jokić O14.5 Rebounds + Brandon Ingram O19.5 Points + RJ Barrett O19.5 Points</p>
+            <p class="sgp-odds">~+600 | $5 max (entertainment only)</p>
         </div>
         
         
         <div class="pavano-bet">
             <h3>🎯 PAVANO'S BET</h3>
-            <p class="record">2W-1L (66%) · Bankroll: $107.40</p>
+            <p class="record">2W-1L | Bankroll: $107.40</p>
             <p class="bet-text">Nikola Jokić Over 14.5 Rebounds (-110)</p>
-            <p class="bet-reason">Nikola Jokić is a rebounding machine (14.6/g). The line is too low.</p>
+            <p class="bet-reason">Highest confidence play based on the numbers above.</p>
         </div>
         
     </div>
     
     <footer>
-        <p>Generated by Pavano</p>
+        <p>Generated by Pavano · <a href="https://github.com/misterpavano/nba-bets" style="color: var(--accent-orange);">View Archive</a></p>
     </footer>
 </body>
 </html>
